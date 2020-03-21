@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
     TMP_Text score;
     TMP_Text message;
     SpriteRenderer spriteRenderer;
+    SpriteRenderer blackBackground;
+    Animator blackBackgroundAnimator;
 
     void Start() {
         if (instance != null) {
@@ -23,6 +25,11 @@ public class UIController : MonoBehaviour
 
         score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
         message = GameObject.Find("UI_Message").GetComponent<TMP_Text>();
+        GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
+        blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
+        blackBackground.enabled = true;
+        blackBackgroundAnimator = blackBackgroundGO.GetComponent<Animator>();
+        RemoveBackgroundOverlay();
         message.text = "";
     }
 
@@ -35,11 +42,12 @@ public class UIController : MonoBehaviour
     }
 
     public void AddBackgroundOverlay() {
-        backgroundOverlay = Instantiate(GameAssets.instance.backgroundOverlayPf, Camera.main.transform.position, Quaternion.identity);
-        backgroundOverlay.transform.parent = Camera.main.transform;
+        
+        blackBackgroundAnimator.SetTrigger("FadeIn");
     }
 
-    public void DestroyBackgroundOverlay() {
-        Destroy(backgroundOverlay);
+    public void RemoveBackgroundOverlay() {
+        
+        blackBackgroundAnimator.SetTrigger("FadeOut");
     }
 }

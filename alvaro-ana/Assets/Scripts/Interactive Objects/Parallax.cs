@@ -8,15 +8,13 @@ public class Parallax : MonoBehaviour
     private GameObject cam;
     public float parallaxEffectScale;
 
-    void Start()
-    {
+    void Start() {
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
         cam = GameObject.Find("MainVirtualCamera");
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         float temp = (cam.transform.position.x * (1 - parallaxEffectScale));
         float dist = (cam.transform.position.x * parallaxEffectScale);
 

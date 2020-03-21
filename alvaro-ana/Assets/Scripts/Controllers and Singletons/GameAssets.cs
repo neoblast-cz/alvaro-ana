@@ -6,23 +6,32 @@ public class GameAssets : MonoBehaviour
 {
     public static GameAssets instance;
 
-    void Awake()
-    {
+    void Awake() {
         if (instance != null) //Singleton Pattern
             Destroy(gameObject);
-        else
-        {
+        else {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
 
     [Header("UI")]
-    public GameObject backgroundOverlayPf;
     public GameObject dialoguePf;
     
 
     [Header("Objects")]
     public GameObject mushroomPf;
     public GameObject coinPf;
+
+    [Header("Music")]
+    public AudioClip[] gameMusicArray;
+
+    [Header("Sounds")]
+    public SoundAudioClip[] soundAudioClipArray;
+    [System.Serializable]
+    public class SoundAudioClip
+    {
+        public SoundManager.Sound sound;
+        public AudioClip audioClip;
+    }
 }

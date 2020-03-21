@@ -77,6 +77,6 @@ public class DialogueController : MonoBehaviour
     private void DestroyUIWindow() {
         Destroy(UIDialogueWindow);
         UIController.instance.UpdateMessage("");
-        UIController.instance.DestroyBackgroundOverlay();
+        UIController.instance.RemoveBackgroundOverlay();
     }
 }
