@@ -17,7 +17,9 @@ public class GameAssets : MonoBehaviour
 
     [Header("UI")]
     public GameObject dialoguePf;
-    
+
+    [Header("FX Prefabs")]
+    public GameObject bloodPF;
 
     [Header("Objects")]
     public GameObject mushroomPf;

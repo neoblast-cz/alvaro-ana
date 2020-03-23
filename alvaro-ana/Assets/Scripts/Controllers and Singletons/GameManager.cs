@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
         score = 0;
     }
 
-    public void RestartLevel() {
-        StartCoroutine(RestartLevelCoroutine());
+    public void RestartLevel(float delay) {
+        player.SetActive(false);
+        StartCoroutine(RestartLevelCoroutine(delay));
     }
 
     public void AddRings(int addition) {
@@ -32,9 +33,10 @@ public class GameManager : MonoBehaviour
         UIController.instance.UpdateRingsScore(score);
     }
 
-    IEnumerator RestartLevelCoroutine () {
-        yield return new WaitForSeconds(0.2f);
+    IEnumerator RestartLevelCoroutine (float delay) {
+        yield return new WaitForSeconds(delay);
         CameraController.instance.RestartCamera();
         player.transform.position = Vector3.zero;
+        player.SetActive(true);
     }
 }

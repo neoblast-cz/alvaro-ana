@@ -18,6 +18,9 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity() {
         Vector2 move = Vector2.zero;
         move.x = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Jump") &&  DialogueController.instance.dialogueInProgress)
+            DialogueController.instance.DisplayNextSentence();
         if (Input.GetButtonDown("Jump") && grounded) {
             velocity.y = jumpTakeOffSpeed;
         } else if (Input.GetButtonUp("Jump")) {
@@ -32,6 +35,7 @@ public class PlayerPlatformerController : PhysicsObject
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetFloat("velocityY", velocity.y / jumpTakeOffSpeed );
 
         targetVelocity = move * maxSpeed;
     }

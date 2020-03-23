@@ -6,7 +6,7 @@ public class TriggerDead : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "Player") {
-            GameManager.instance.RestartLevel();
+            GameManager.instance.RestartLevel(0.2f);
         }
     }
 }

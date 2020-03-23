@@ -64,25 +64,21 @@ public class PhysicsObject : MonoBehaviour
 
             for (int i = 0; i < hitBufferList.Count; i++) {
                 Vector2 currentNormal = hitBufferList[i].normal;
-                if (currentNormal.y > mingGroundNormalY)
-                {
+                if (currentNormal.y > mingGroundNormalY) {
                     grounded = true;
-                    if (yMovement)
-                    {
+                    if (yMovement) {
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
                     }
                 }
                 float projection = Vector2.Dot(velocity, currentNormal);
-                if (projection < 0)
-                {
+                if (projection < 0) {
                     velocity = velocity - projection * currentNormal;
                 }
 
                 float modifiedDistance = hitBufferList[i].distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
-
             rb2d.position = rb2d.position + move.normalized * distance;
         }
     }

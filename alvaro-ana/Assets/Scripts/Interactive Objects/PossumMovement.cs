@@ -19,46 +19,33 @@ public class PossumMovement : MonoBehaviour
 	private RaycastHit2D leftLedge;
 
 	void Update() {
-
-
-
-
+        
         //Check for walls
 		rightWall = Physics2D.Raycast(new Vector2(transform.position.x + rayCastOffset.x, transform.position.y + rayCastOffset.y), Vector2.right, 1f, layerMask);
 		Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + rayCastOffset.y), Vector2.right, Color.yellow);
 
-		if (rightWall.collider != null)
-		{
-			if (!followPlayer)
-			{
+		if (rightWall.collider != null) {
+			if (!followPlayer) {
 				direction = -1;
 			}
-			else
-			{
+			else {
 				Jump();
 			}
-
 		}
 
 		leftWall = Physics2D.Raycast(new Vector2(transform.position.x - rayCastOffset.x, transform.position.y + rayCastOffset.y), Vector2.left, 1f, layerMask);
 		Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + rayCastOffset.y), Vector2.left, Color.blue);
 
-		if (leftWall.collider != null)
-		{
-			if (!followPlayer)
-			{
+		if (leftWall.collider != null) {
+			if (!followPlayer) {
 				direction = 1;
-			}
-			else
-			{
+			} else {
 				Jump();
 			}
 		}
 
-
 		//Check for ledges
-		if (!followPlayer)
-		{
+		if (!followPlayer) {
 			rightLedge = Physics2D.Raycast(new Vector2(transform.position.x + rayCastOffset.x, transform.position.y), Vector2.down, .5f);
 			Debug.DrawRay(new Vector2(transform.position.x + rayCastOffset.x, transform.position.y), Vector2.down, Color.blue);
 			if (rightLedge.collider == null)
