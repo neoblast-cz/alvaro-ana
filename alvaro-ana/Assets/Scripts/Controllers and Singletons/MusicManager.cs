@@ -46,4 +46,13 @@ public class MusicManager : MonoBehaviour
 
         StartCoroutine(PlayRandomMusic());
     }
+
+    public void PlayPause() {
+        if (musicSource.isPlaying) {
+            musicSource.Pause();
+        }
+        else {
+            musicSource.Play();
+        }
+    }
 }

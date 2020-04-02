@@ -17,9 +17,13 @@ public class GameAssets : MonoBehaviour
 
     [Header("UI")]
     public GameObject dialoguePf;
+    public Sprite playButton;
+    public Sprite pauseButton;
 
     [Header("FX Prefabs")]
-    public GameObject bloodPF;
+    public GameObject deathEffectPF;
+    public GameObject smokePF;
+    public GameObject hitPowPF;
 
     [Header("Objects")]
     public GameObject mushroomPf;

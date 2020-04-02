@@ -38,5 +38,8 @@ public class GameManager : MonoBehaviour
         CameraController.instance.RestartCamera();
         player.transform.position = Vector3.zero;
         player.SetActive(true);
+        GameObject puff = (GameObject)Instantiate(GameAssets.instance.smokePF, transform.position, transform.rotation);
+        puff.transform.localScale = new Vector3(2f, 2f, 2f);
+        Destroy(puff, 2f);
     }
 }

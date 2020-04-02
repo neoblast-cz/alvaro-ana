@@ -42,12 +42,10 @@ public class UIController : MonoBehaviour
     }
 
     public void AddBackgroundOverlay() {
-        
         blackBackgroundAnimator.SetTrigger("FadeIn");
     }
 
     public void RemoveBackgroundOverlay() {
-        
         blackBackgroundAnimator.SetTrigger("FadeOut");
     }
 }
