@@ -9,14 +9,23 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump = false;
+    bool dashDown = false;
+
+    private bool playingmemories;
 
     void Start() {
         controller = GetComponent<CharacterController2D>();
     }
 
     void Update() {
-        if (!DialogueController.instance.dialogueInProgress)
+        if (!DialogueController.instance.dialogueInProgress && !playingmemories) {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+            if (Input.GetKeyDown(KeyCode.I)) {
+                UIController.instance.InventorySwitch();
+            }
+        }
+            
         else horizontalMove = 0f;
 
         if (Input.GetButtonDown("Jump")) {
@@ -26,10 +35,20 @@ public class PlayerMovement : MonoBehaviour
                 jump = true;
             }
         }
+
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+            dashDown = true;
+        } else dashDown = false;
     }
 
     void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+
+        controller.DashDown(dashDown);
+    }
+
+    public void PlayingMemories() {
+        playingmemories = !playingmemories;
     }
 }

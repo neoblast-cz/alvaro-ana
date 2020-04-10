@@ -6,13 +6,15 @@ public class Coin : MonoBehaviour
 {
     float frequency = 3f;
     float magnitude = 0.01f;
+    private bool used;
 
     void FixedUpdate() {
         transform.position = transform.position + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
     }
 
     void OnTriggerEnter2D(Collider2D target) {
-        if (target.tag == "Player") {
+        if (target.tag == "Player" && !used) {
+            used = true;
             GameManager.instance.AddRings(1);
             Destroy(gameObject);
         }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     GameObject player;
+    private float fxScale = 1f;
 
     public int score;
 
@@ -41,5 +42,24 @@ public class GameManager : MonoBehaviour
         GameObject puff = (GameObject)Instantiate(GameAssets.instance.smokePF, transform.position, transform.rotation);
         puff.transform.localScale = new Vector3(2f, 2f, 2f);
         Destroy(puff, 2f);
+    }
+
+    public void MovePlayer (Transform finalDestination)
+    {
+        player.SetActive(false);
+        StartCoroutine(MovePlayerCoroutine(finalDestination));
+    }
+
+    IEnumerator MovePlayerCoroutine (Transform finalDestination)
+    {
+        yield return new WaitForSeconds(1f);
+        CameraController.instance.RestartCamera();
+        player.transform.position = finalDestination.position;
+
+        GameObject teleportEffect = (GameObject)Instantiate(GameAssets.instance.teleportPF, transform.position, transform.rotation);
+        teleportEffect.transform.localScale = new Vector3(fxScale, fxScale, fxScale);
+        Destroy(teleportEffect, 2f);
+
+        player.SetActive(true);
     }
 }

@@ -3,28 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class Memory : MonoBehaviour
 {
-
+    [Header("Type")]
     public MemoryType memoryType;
-    private  VideoController videoController;
+
+    private Image[] icons;
+    private Image icon;
+    public TMP_Text nameText;
+
     public VideoClip videoclip;
+    public Image photo;
     public AudioClip audioClip;
 
-    public void Awake() {
-        videoController = GameObject.Find("VideoController_DoNotRename").GetComponent<VideoController>();
+    public void OnEnable() {
+        nameText = GetComponentInChildren<TMP_Text>();
+        icons = GetComponentsInChildren<Image>();
+        for (int i = 0; i < icons.Length; i++) {
+            if (icons[i].name == "Icon")
+                icon = icons[i];
+        }
+        //gameObject.name.Replace("(Clone)", "");
+        
+
+        switch (memoryType)
+        {
+            case (MemoryType.Video):
+                icon.sprite = GameAssets.instance.iconVideo;
+                break;
+            case (MemoryType.Audio):
+                icon.sprite = GameAssets.instance.iconAudio;
+                break;
+            case (MemoryType.Photo):
+                icon.sprite = GameAssets.instance.iconPhoto;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void Update()
+    {
+        if (nameText.text != gameObject.name)
+            nameText.text = gameObject.name.ToString();
     }
 
     public void PlayMemory() {
         switch (memoryType)
         {
             case (MemoryType.Video):
-                videoController.StartPlayingVideo(videoclip);
+                MemoriesController.instance.StartPlayingVideo(videoclip);
                 break;
             case (MemoryType.Audio):
                 break;
-            case (MemoryType.Image):
+            case (MemoryType.Photo):
+
+                MemoriesController.instance.ShowPhoto(photo);
+                Debug.Log("1");
                 break;
             default:
                 break;
@@ -36,5 +74,5 @@ public enum MemoryType
 {
     Video,
     Audio,
-    Image
+    Photo
 }

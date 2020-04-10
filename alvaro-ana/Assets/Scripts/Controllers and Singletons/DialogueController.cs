@@ -10,6 +10,8 @@ public class DialogueController : MonoBehaviour
     private GameObject UIDialogueWindow;
     private TMP_Text[] UIDialogueWindowTexts;
 
+    private NPC speakingWith;
+
     public Queue<string> sentences;
 
     public bool dialogueInProgress;
@@ -26,6 +28,7 @@ public class DialogueController : MonoBehaviour
     }
 
     public void StartDialogue(string speaker, Dialogue dialogueFromTrigger, Transform characterTransform) {
+        speakingWith = characterTransform.gameObject.GetComponent<NPC>();
         // initiate
         if (!dialogueInProgress)
         {
@@ -64,6 +67,8 @@ public class DialogueController : MonoBehaviour
         DestroyUIWindow();
         CameraController.instance.StartZoomOut();
         dialogueInProgress = false;
+        speakingWith.GiveObject();
+        speakingWith = null;
     }
 
     private void CreateUIWindow (Transform transformWhere) {

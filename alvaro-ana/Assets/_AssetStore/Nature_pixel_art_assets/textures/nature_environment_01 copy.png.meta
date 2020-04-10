@@ -35,6 +35,18 @@ TextureImporter:
   - first:
       213: -1008204544296207614
     second: nature_environment_01 copy_10
+  - first:
+      213: -4460770632717540271
+    second: Platform-Single
+  - first:
+      213: -7994183145081767088
+    second: Platform-Right
+  - first:
+      213: 1261549720375272657
+    second: Platform-Center
+  - first:
+      213: 5211284785054204397
+    second: Platform-Left
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -357,6 +369,90 @@ TextureImporter:
       bones: []
       spriteID: 20b3a440f432202f0800000000000000
       internalID: -1008204544296207614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform-Single
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 48
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15460646eb82812c0800000000000000
+      internalID: -4460770632717540271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform-Right
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 48
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b7cf7d8c4fe0190800000000000000
+      internalID: -7994183145081767088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform-Center
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 48
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4267569cce18110800000000000000
+      internalID: 1261549720375272657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform-Left
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 48
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1cd84c6e3325840800000000000000
+      internalID: 5211284785054204397
       vertices: []
       indices: 
       edges: []

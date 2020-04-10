@@ -7,12 +7,15 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    GameObject backgroundOverlay;
+    
     TMP_Text score;
     TMP_Text message;
-    SpriteRenderer spriteRenderer;
+    
     SpriteRenderer blackBackground;
     Animator blackBackgroundAnimator;
+
+    private Animator animator;
+    bool inventory;
 
     void Start() {
         if (instance != null) {
@@ -25,6 +28,7 @@ public class UIController : MonoBehaviour
 
         score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
         message = GameObject.Find("UI_Message").GetComponent<TMP_Text>();
+        animator = GameObject.Find("UI_DoNotRename").GetComponent<Animator>();
         GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
         blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
         blackBackground.enabled = true;
@@ -47,5 +51,10 @@ public class UIController : MonoBehaviour
 
     public void RemoveBackgroundOverlay() {
         blackBackgroundAnimator.SetTrigger("FadeOut");
+    }
+
+    public void InventorySwitch() {
+        animator.SetBool("inventory", !inventory);
+        inventory = !inventory;
     }
 }

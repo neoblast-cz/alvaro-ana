@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameAssets : MonoBehaviour
 {
@@ -20,10 +21,17 @@ public class GameAssets : MonoBehaviour
     public Sprite playButton;
     public Sprite pauseButton;
 
+    [Header("Icons")]
+    public Sprite iconVideo;
+    public Sprite iconPhoto;
+    public Sprite iconAudio;
+
     [Header("FX Prefabs")]
     public GameObject deathEffectPF;
     public GameObject smokePF;
     public GameObject hitPowPF;
+    public GameObject dashPF;
+    public GameObject teleportPF;
 
     [Header("Objects")]
     public GameObject mushroomPf;
