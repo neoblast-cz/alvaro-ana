@@ -216,11 +216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   memoryType: 2
-  icon: {fileID: 0}
   nameText: {fileID: 0}
   videoclip: {fileID: 0}
   photo: {fileID: 21300000, guid: 297de632163c2474abe267d448f24ec3, type: 3}
-  audioClip: {fileID: 8300000, guid: 2ff1511ee4ca34749858e6e7ea845cfe, type: 3}
+  audioClip: {fileID: 0}
 --- !u!1 &5655014823728495237
 GameObject:
   m_ObjectHideFlags: 0

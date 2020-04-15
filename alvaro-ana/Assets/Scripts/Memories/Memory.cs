@@ -16,7 +16,7 @@ public class Memory : MonoBehaviour
     public TMP_Text nameText;
 
     public VideoClip videoclip;
-    public Image photo;
+    public Sprite photo;
     public AudioClip audioClip;
 
     public void OnEnable() {
@@ -58,11 +58,10 @@ public class Memory : MonoBehaviour
                 MemoriesController.instance.StartPlayingVideo(videoclip);
                 break;
             case (MemoryType.Audio):
+                MemoriesController.instance.StartPlayAudio(audioClip);
                 break;
             case (MemoryType.Photo):
-
                 MemoriesController.instance.ShowPhoto(photo);
-                Debug.Log("1");
                 break;
             default:
                 break;

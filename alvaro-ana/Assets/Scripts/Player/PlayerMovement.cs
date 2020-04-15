@@ -39,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
             dashDown = true;
         } else dashDown = false;
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            GameManager.instance.PauseScreenToggle();
+        }
     }
 
     void FixedUpdate() {

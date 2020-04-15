@@ -8,10 +8,12 @@ public class TriggerPipeEntrance : MonoBehaviour
     private float fxScale = 1f;
     private bool used;
 
-    void OnTriggerEnter2D(Collider2D target) {
-        if (target.tag == "Player" && !used) {
-            Move();
-            used = true;
+    void OnTriggerStay2D(Collider2D collision) {
+        if (!used) {
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+                Move();
+                used = true;
+            }
         }
     }
 

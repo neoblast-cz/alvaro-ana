@@ -8,9 +8,6 @@ public class MusicManager : MonoBehaviour
 
     AudioSource musicSource;
     List<AudioClip> list;
-    public float standardVolume = 0.33f;
-    public float pitch = 1.1f;
-    public float transitionTime = 10f;
 
     void Awake() {
         if (instance != null) {
@@ -24,30 +21,29 @@ public class MusicManager : MonoBehaviour
 
     void Start() {
         musicSource = GetComponent<AudioSource>();
-        musicSource.pitch = pitch;
-        musicSource.volume = standardVolume;
-        // create list and add clips from game assets
+
         list = new List<AudioClip>();
-        foreach (AudioClip musicClip in GameAssets.instance.gameMusicArray)
-        {
+        foreach (AudioClip musicClip in GameAssets.instance.gameMusicArray) {
             list.Add(musicClip);
         }
-
+        
         StartCoroutine(PlayRandomMusic());
     }
 
     IEnumerator PlayRandomMusic() {
+        //choose random number
         int randomNumber = Random.Range(0, list.Count);
 
+        // play music clip based on random number
         musicSource.clip = list[randomNumber];
         musicSource.Play();
 
         yield return new WaitForSeconds(list[randomNumber].length);
-
+        //let's start again
         StartCoroutine(PlayRandomMusic());
     }
 
-    public void PlayPause() {
+    public void PlayPauseMusic() {
         if (musicSource.isPlaying) {
             musicSource.Pause();
         }

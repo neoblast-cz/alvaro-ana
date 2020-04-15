@@ -13,11 +13,12 @@ public class UIController : MonoBehaviour
     
     SpriteRenderer blackBackground;
     Animator blackBackgroundAnimator;
+    Animator messageAnimator;
 
     private Animator animator;
     bool inventory;
 
-    void Start() {
+    void Awake() {
         if (instance != null) {
             Destroy(gameObject);
         }
@@ -27,7 +28,8 @@ public class UIController : MonoBehaviour
         }
 
         score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
-        message = GameObject.Find("UI_Message").GetComponent<TMP_Text>();
+        message = GameObject.Find("UI_Message_DoNotRename").GetComponent<TMP_Text>();
+        messageAnimator = GameObject.Find("UI_Message_DoNotRename").GetComponent<Animator>();
         animator = GameObject.Find("UI_DoNotRename").GetComponent<Animator>();
         GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
         blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
@@ -37,12 +39,29 @@ public class UIController : MonoBehaviour
         message.text = "";
     }
 
-    public void UpdateRingsScore(int newScore) {
-        score.text = "Rings: " + newScore.ToString();
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            UpdateMessageWithAnimation("test");
+            
+        }
+
+    }
+
+    public void UpdateRingsScore(int newScore, int totalNumberOfRigngs) {
+        //score.color.a = 1f;
+        score.text = newScore.ToString() + "/" + totalNumberOfRigngs;
     }
 
     public void UpdateMessage(string actualMessage) {
         message.text = actualMessage.ToString();
+    }
+
+    public void UpdateMessageWithAnimation(string actualMessage) {
+        message.text = actualMessage.ToString();
+        messageAnimator.SetTrigger("fadeOut");
     }
 
     public void AddBackgroundOverlay() {

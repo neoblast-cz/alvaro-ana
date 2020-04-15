@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GameAssets : MonoBehaviour
 {
@@ -37,15 +38,21 @@ public class GameAssets : MonoBehaviour
     public GameObject mushroomPf;
     public GameObject coinPf;
 
-    [Header("Music")]
+    [Header("Music & Sounds")]
+    public AudioMixer audioMixer;
+    public AudioMixerGroup musicMixerGroup;
     public AudioClip[] gameMusicArray;
 
     [Header("Sounds")]
+    public AudioMixerGroup audioMixerGroup;
     public SoundAudioClip[] soundAudioClipArray;
     [System.Serializable]
     public class SoundAudioClip
     {
-        public SoundManager.Sound sound;
+        public AudioManager.Sound sound;
         public AudioClip audioClip;
     }
+
+    [Header("Sprites")]
+    public Sprite walmortOpened;
 }

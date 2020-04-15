@@ -36,6 +36,7 @@ public class MemoriesController : MonoBehaviour
 
         audio = GameObject.Find("Audio_DoNotRename");
         audio.SetActive(false);
+        audioSource = audio.GetComponent<AudioSource>();
     }
 
     void Start(){
@@ -57,16 +58,8 @@ public class MemoriesController : MonoBehaviour
         videoPlayer.clip = videoClip;
         video.SetActive(true);
         playButtonVideo.sprite = GameAssets.instance.pauseButton;
-        MusicManager.instance.PlayPause();
-        UIController.instance.InventorySwitch();
-        playerMovement.PlayingMemories();
-    }
-
-    public void ClosePlayer() {
-        videoPlayer.Pause();
-        video.SetActive(false);
-        MusicManager.instance.PlayPause();
-        playerMovement.PlayingMemories();
+        
+        InitiateMemory(true);
     }
 
     public void PlayPauseVideo() {
@@ -80,45 +73,71 @@ public class MemoriesController : MonoBehaviour
         }
     }
 
+    public void CloseVideo() {
+        videoPlayer.Pause();
+        video.SetActive(false);
+
+        EndMemory(true);
+    }
+
     // photos
-    public void ShowPhoto(Image newSprite) {
-        photoImage = newSprite;
+    public void ShowPhoto(Sprite newSprite) {
+        photoImage.sprite = newSprite;
         photo.SetActive(true);
-        UIController.instance.InventorySwitch();
         playerMovement.PlayingMemories();
+
+        InitiateMemory(false);
     }
 
     public void ClosePhoto() {
         photoImage.sprite = null;
         photo.SetActive(false);
-        playerMovement.PlayingMemories();
+
+        EndMemory(false);
     }
 
     public void StartPlayAudio (AudioClip newAudioClip) {
         audio.SetActive(true);
         audioSource.clip = newAudioClip;
+        audioSource.outputAudioMixerGroup = GameAssets.instance.audioMixerGroup;
         playButtonAudio.sprite = GameAssets.instance.pauseButton;
         audioSource.Play();
-        playerMovement.PlayingMemories();
+        
+        InitiateMemory(true);
     }
 
-    public void PlayPauseAudio()
-    {
-        if (audioSource.isPlaying)
-        {
+    public void PlayPauseAudio() {
+        if (audioSource.isPlaying) {
             audioSource.Pause();
             playButtonAudio.sprite = GameAssets.instance.playButton;
-        } else
-        {
+        } else {
             audioSource.Play();
             playButtonAudio.sprite = GameAssets.instance.pauseButton;
         }
     }
 
-    public void CloseAudio()
-    {
+    public void CloseAudio() {
         audio.SetActive(false);
         audioSource.Pause();
+
+        EndMemory(true);
+    }
+
+    private void InitiateMemory(bool audioControl) {
         playerMovement.PlayingMemories();
+        CameraController.instance.StartZoomIn();
+        UIController.instance.AddBackgroundOverlay();
+        UIController.instance.InventorySwitch();
+        if (audioControl == true)
+            MusicManager.instance.PlayPauseMusic();
+    }
+
+    private void EndMemory(bool audioControl)
+    {
+        CameraController.instance.StartZoomOut();
+        UIController.instance.RemoveBackgroundOverlay();
+        playerMovement.PlayingMemories();
+        if (audioControl == true)
+            MusicManager.instance.PlayPauseMusic();
     }
 }
