@@ -84,7 +84,6 @@ public class MemoriesController : MonoBehaviour
     public void ShowPhoto(Sprite newSprite) {
         photoImage.sprite = newSprite;
         photo.SetActive(true);
-        playerMovement.PlayingMemories();
 
         InitiateMemory(false);
     }
@@ -125,16 +124,15 @@ public class MemoriesController : MonoBehaviour
 
     private void InitiateMemory(bool audioControl) {
         playerMovement.PlayingMemories();
-        CameraController.instance.StartZoomIn();
+        CameraController.instance.StartZoomIn(1.5f, 4f);
         UIController.instance.AddBackgroundOverlay();
         UIController.instance.InventorySwitch();
         if (audioControl == true)
             MusicManager.instance.PlayPauseMusic();
     }
 
-    private void EndMemory(bool audioControl)
-    {
-        CameraController.instance.StartZoomOut();
+    private void EndMemory(bool audioControl) {
+        CameraController.instance.StartZoomOut(1.5f, 4f);
         UIController.instance.RemoveBackgroundOverlay();
         playerMovement.PlayingMemories();
         if (audioControl == true)

@@ -53,7 +53,9 @@ public class CameraController : MonoBehaviour
         virtualCamera.SetActive(true);
     }
 
-    public void StartZoomOut() {
+    public void StartZoomOut(float localStartingSize, float localFinalSize) {
+        cameraStartingSize = localStartingSize;
+        cameraFinalSize = localFinalSize;
         shouldZoomOut = true;
         shouldZoomIn = false;
     }
@@ -68,7 +70,9 @@ public class CameraController : MonoBehaviour
             shouldZoomOut = false;
     }
 
-    public void StartZoomIn() {
+    public void StartZoomIn(float localStartingSize, float localFinalSize) {
+        cameraStartingSize = localStartingSize;
+        cameraFinalSize = localFinalSize;
         shouldZoomIn = true;
         shouldZoomOut = false;
     }

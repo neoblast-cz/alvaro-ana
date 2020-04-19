@@ -7,13 +7,13 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    
     TMP_Text score;
-    TMP_Text message;
     
     SpriteRenderer blackBackground;
     Animator blackBackgroundAnimator;
-    Animator messageAnimator;
+
+    GameObject messageParent;
+    GameObject messageSticky;
 
     private Animator animator;
     bool inventory;
@@ -27,41 +27,22 @@ public class UIController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
+        //activate intro screen
+        GameAssets.instance.introMenu.SetActive(true);
+
         score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
-        message = GameObject.Find("UI_Message_DoNotRename").GetComponent<TMP_Text>();
-        messageAnimator = GameObject.Find("UI_Message_DoNotRename").GetComponent<Animator>();
+        messageParent = GameObject.Find("UI_Message_DoNotRename");
         animator = GameObject.Find("UI_DoNotRename").GetComponent<Animator>();
         GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
+
         blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
         blackBackground.enabled = true;
         blackBackgroundAnimator = blackBackgroundGO.GetComponent<Animator>();
         RemoveBackgroundOverlay();
-        message.text = "";
-    }
-
-    
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            UpdateMessageWithAnimation("test");
-            
-        }
-
     }
 
     public void UpdateRingsScore(int newScore, int totalNumberOfRigngs) {
-        //score.color.a = 1f;
         score.text = newScore.ToString() + "/" + totalNumberOfRigngs;
-    }
-
-    public void UpdateMessage(string actualMessage) {
-        message.text = actualMessage.ToString();
-    }
-
-    public void UpdateMessageWithAnimation(string actualMessage) {
-        message.text = actualMessage.ToString();
-        messageAnimator.SetTrigger("fadeOut");
     }
 
     public void AddBackgroundOverlay() {
@@ -75,5 +56,24 @@ public class UIController : MonoBehaviour
     public void InventorySwitch() {
         animator.SetBool("inventory", !inventory);
         inventory = !inventory;
+    }
+
+    public void UpdateMessageWithFadeOut(string actualMessage) {
+        GameObject message = Instantiate(GameAssets.instance.messagingSystemWithFadeOutPF, messageParent.transform, messageParent.transform);
+        message.transform.parent = messageParent.transform;
+        message.GetComponent<TMP_Text>().text = actualMessage.ToString();
+
+        Destroy(message, 6f);
+    }
+
+    public void UpdateMessageSticky(string actualMessage, bool initiate) {
+        if (initiate) {
+            messageSticky = Instantiate(GameAssets.instance.messagingSystemPF, messageParent.transform, messageParent.transform);
+            messageSticky.transform.parent = messageParent.transform;
+            messageSticky.GetComponent<TMP_Text>().text = actualMessage.ToString();
+        }
+        else {
+            Destroy(messageSticky);
+        }
     }
 }

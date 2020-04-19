@@ -47,6 +47,18 @@ TextureImporter:
   - first:
       213: 5211284785054204397
     second: Platform-Left
+  - first:
+      213: -5540343475297564605
+    second: White1
+  - first:
+      213: 4558467735366037211
+    second: White2
+  - first:
+      213: -955053625291795944
+    second: White3
+  - first:
+      213: -715172314554168381
+    second: White4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -453,6 +465,90 @@ TextureImporter:
       bones: []
       spriteID: de1cd84c6e3325840800000000000000
       internalID: 5211284785054204397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White1
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3484c3596febc13b0800000000000000
+      internalID: -5540343475297564605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde6296e04ee24f30800000000000000
+      internalID: 4558467735366037211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White3
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8129803b9c7feb2f0800000000000000
+      internalID: -955053625291795944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White4
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 288
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb0ecda1923316f0800000000000000
+      internalID: -715172314554168381
       vertices: []
       indices: 
       edges: []

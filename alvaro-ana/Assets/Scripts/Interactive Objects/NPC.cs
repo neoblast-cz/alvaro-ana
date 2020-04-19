@@ -7,13 +7,11 @@ public class NPC : MonoBehaviour
     public GameObject carryingMemory;
     private Transform inventory;
 
-    void Start()
-    {
+    void Start() {
         inventory = GameObject.Find("Content_DoNotRename").transform;
     }
 
-    void Update()
-    {
+    void Update() {
         if (Input.GetKeyDown(KeyCode.Q))
             GiveObject();
     }
@@ -28,14 +26,13 @@ public class NPC : MonoBehaviour
 
     }
 
-    public void GiveObject()
-    {
-        if (carryingMemory != null)
-        {
+    public void GiveObject() {
+        if (carryingMemory != null){
             GameObject memoryPF = (GameObject)Instantiate(carryingMemory, inventory.position, Quaternion.identity);
             memoryPF.transform.localScale = new Vector3(1, 1, 1);
             memoryPF.transform.parent = inventory;
             memoryPF.name = carryingMemory.name;
+            UIController.instance.UpdateMessageWithFadeOut("Memory added");
             carryingMemory = null;
         }
     }

@@ -30,12 +30,11 @@ public class DialogueController : MonoBehaviour
     public void StartDialogue(string speaker, Dialogue dialogueFromTrigger, Transform characterTransform) {
         speakingWith = characterTransform.gameObject.GetComponent<NPC>();
         // initiate
-        if (!dialogueInProgress)
-        {
+        if (!dialogueInProgress) {
             sentences.Clear();
             CreateUIWindow(characterTransform);
             UIDialogueWindowTexts[0].text = speaker;
-            CameraController.instance.StartZoomIn();
+            CameraController.instance.StartZoomIn(2.5f, 4f);
             foreach (string sentence in dialogueFromTrigger.sentences)
             {
                 sentences.Enqueue(sentence);
@@ -59,13 +58,14 @@ public class DialogueController : MonoBehaviour
         UIDialogueWindowTexts[1].text = "";
         foreach (char letter in sentence.ToCharArray()) {
             UIDialogueWindowTexts[1].text += letter;
+            yield return new WaitForSeconds(0.06f);
             yield return null;
         }
     }
 
     private void EndDialogue() {
         DestroyUIWindow();
-        CameraController.instance.StartZoomOut();
+        CameraController.instance.StartZoomOut(2.5f, 4f);
         dialogueInProgress = false;
         speakingWith.GiveObject();
         speakingWith = null;
@@ -75,13 +75,13 @@ public class DialogueController : MonoBehaviour
         UIDialogueWindow = Instantiate(GameAssets.instance.dialoguePf, new Vector3(transformWhere.position.x, transformWhere.position.y + 1.3f, transformWhere.position.z), transformWhere.rotation);
         UIDialogueWindow.transform.parent = gameObject.transform;
         UIDialogueWindowTexts = UIDialogueWindow.GetComponentsInChildren<TMP_Text>();
-        UIController.instance.UpdateMessage("Press Spacebar to continue");
+        UIController.instance.UpdateMessageSticky("Press Spacebar to continue", true);
         UIController.instance.AddBackgroundOverlay();
     }
 
     private void DestroyUIWindow() {
         Destroy(UIDialogueWindow);
-        UIController.instance.UpdateMessage("");
+        UIController.instance.UpdateMessageSticky("", false);
         UIController.instance.RemoveBackgroundOverlay();
     }
 }

@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     GameObject player;
     private float fxScale = 1f;
 
-    public GameObject pauseScreen;
     public bool pauseScreenActive;
 
     private int totalNumberOfRings;
@@ -24,13 +23,13 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         player = GameObject.FindGameObjectWithTag("Player");
-        pauseScreen = GameObject.Find("PauseMenu_DoNotRename");
-        pauseScreen.SetActive(false);
+        
+        GameAssets.instance.pauseMenu.SetActive(false);
 
         SpriteRenderer[] rings = GameObject.Find("_Rings_DoNotRename").GetComponentsInChildren<SpriteRenderer>();
         totalNumberOfRings = rings.Length;
         score = 0;
-        AddRings(0);
+        UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
     }
 
     public void RestartLevel(float delay) {
@@ -54,12 +53,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void MovePlayer (Transform finalDestination) {
-        player.SetActive(false);
         StartCoroutine(MovePlayerCoroutine(finalDestination));
     }
 
     IEnumerator MovePlayerCoroutine (Transform finalDestination) {
-        yield return new WaitForSeconds(1f);
+        player.GetComponent<Animator>().SetTrigger("warpIn");
+        yield return new WaitForSeconds(0.5f);
+        player.SetActive(false);
+
         CameraController.instance.RestartCamera();
         player.transform.position = finalDestination.position;
 
@@ -68,17 +69,18 @@ public class GameManager : MonoBehaviour
         Destroy(teleportEffect, 2f);
 
         player.SetActive(true);
+        player.GetComponent<Animator>().SetTrigger("warpOut");
     }
 
     public void PauseScreenToggle() {
         if (pauseScreenActive) {
-            pauseScreen.SetActive(false);
-            CameraController.instance.StartZoomOut();
+            GameAssets.instance.pauseMenu.SetActive(false);
+            CameraController.instance.StartZoomOut(2.5f, 4f);
             UIController.instance.RemoveBackgroundOverlay();
             pauseScreenActive = !pauseScreenActive;
         } else {
-            pauseScreen.SetActive(true);
-            CameraController.instance.StartZoomIn();
+            GameAssets.instance.pauseMenu.SetActive(true);
+            CameraController.instance.StartZoomIn(2.5f, 4f);
             UIController.instance.AddBackgroundOverlay();
             pauseScreenActive = !pauseScreenActive;
         }

@@ -21,7 +21,12 @@ public class GameAssets : MonoBehaviour
     public GameObject dialoguePf;
     public Sprite playButton;
     public Sprite pauseButton;
-
+    public GameObject messagingSystemPF;
+    public GameObject messagingSystemWithFadeOutPF;
+    public GameObject introMenu;
+    public GameObject pauseMenu;
+    public GameObject finalScreen;
+    
     [Header("Icons")]
     public Sprite iconVideo;
     public Sprite iconPhoto;
@@ -55,4 +60,5 @@ public class GameAssets : MonoBehaviour
 
     [Header("Sprites")]
     public Sprite walmortOpened;
+    public Sprite groomSkin;
 }

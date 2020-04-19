@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool dashDown = false;
+    bool cannotJump = false;
 
     private bool playingmemories;
 
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
             
         else horizontalMove = 0f;
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && !cannotJump) {
             if (DialogueController.instance.dialogueInProgress)
                 DialogueController.instance.DisplayNextSentence();
             else {
@@ -54,5 +55,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayingMemories() {
         playingmemories = !playingmemories;
+        Debug.Log("cannot move, playing memories=" + playingmemories);
+    }
+
+    public void CannotJump() {
+        cannotJump = true;
     }
 }
