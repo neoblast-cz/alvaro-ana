@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
     public enum Sound
     {
         Jump,
-        Sound2
+        Coin,
+        Dying,
+        Puff,
     }
 
     void Awake() {

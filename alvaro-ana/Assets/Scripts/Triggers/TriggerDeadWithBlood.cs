@@ -11,6 +11,7 @@ public class TriggerDeadWithBlood : MonoBehaviour
             blood.transform.localScale = new Vector3(fxScale, fxScale, fxScale);
             Destroy(blood, 2f);
             GameManager.instance.RestartLevel(1f);
+            AudioManager.instance.PlaySound(AudioManager.Sound.Dying);
         }
     }
 }

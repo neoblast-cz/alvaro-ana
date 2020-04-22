@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
 
     GameObject messageParent;
     GameObject messageSticky;
+    GameObject uI;
 
     private Animator animator;
     bool inventory;
@@ -32,7 +33,8 @@ public class UIController : MonoBehaviour
 
         score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
         messageParent = GameObject.Find("UI_Message_DoNotRename");
-        animator = GameObject.Find("UI_DoNotRename").GetComponent<Animator>();
+        uI = GameObject.Find("UI_DoNotRename");
+        animator = uI.GetComponent<Animator>();
         GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
 
         blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
@@ -75,5 +77,13 @@ public class UIController : MonoBehaviour
         else {
             Destroy(messageSticky);
         }
+    }
+
+    public void HideUI() {
+        uI.SetActive(false);
+    }
+
+    public void ShowUI() {
+        uI.SetActive(true);
     }
 }

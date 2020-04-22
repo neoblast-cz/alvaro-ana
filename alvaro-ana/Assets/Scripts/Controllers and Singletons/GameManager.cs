@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         GameObject puff = (GameObject)Instantiate(GameAssets.instance.smokePF, transform.position, transform.rotation);
         puff.transform.localScale = new Vector3(2f, 2f, 2f);
         Destroy(puff, 2f);
+        AudioManager.instance.PlaySound(AudioManager.Sound.Puff);
     }
 
     public void MovePlayer (Transform finalDestination) {

@@ -15,9 +15,9 @@ public class NPCShopKeeper : NPC
 
     protected override void InteractionWithPlayer() {
         if (CheckIfEnoughRings())
-            DialogueController.instance.StartDialogue(gameObject.name, shopKeeperEnoughRings, transform);
+            DialogueController.instance.StartDialogue(gameObject.name, shopKeeperEnoughRings, transform, false);
         else {
-            DialogueController.instance.StartDialogue(gameObject.name, shopKeeperNotEnoughRings, transform);
+            DialogueController.instance.StartDialogue(gameObject.name, shopKeeperNotEnoughRings, transform, false);
         }
     }
 

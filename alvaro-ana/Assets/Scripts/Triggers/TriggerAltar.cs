@@ -6,6 +6,8 @@ public class TriggerAltar : MonoBehaviour
 {
     bool used;
 
+    public Dialogue justDialogue;
+
     bool startIncreasingAlpha;
     CanvasGroup localCanvasGroup;
     float increment = 0.00001f;
@@ -13,6 +15,7 @@ public class TriggerAltar : MonoBehaviour
     void Start()
     {
         localCanvasGroup = GameAssets.instance.finalScreen.GetComponent<CanvasGroup>();
+        localCanvasGroup.alpha = 0f;
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -33,9 +36,14 @@ public class TriggerAltar : MonoBehaviour
     IEnumerator FinalAnimation(GameObject target) {
         target.GetComponent<PlayerMovement>().PlayingMemories();
         yield return new WaitForSeconds(1f);
+
         CameraController.instance.StartZoomOut(3f, 20f);
-        GameAssets.instance.finalScreen.SetActive(true);
         yield return new WaitForSeconds(1f);
+
+        DialogueController.instance.StartDialogue("Ana", justDialogue, GameObject.Find("Ana_DoNotRename").transform, true);
+        GameAssets.instance.finalScreen.SetActive(true);
+        yield return new WaitForSeconds(2f);
+
         StartCoroutine(ChangeAlpha(0f, 1f, 10f));
     }
 

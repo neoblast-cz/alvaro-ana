@@ -127,6 +127,7 @@ public class MemoriesController : MonoBehaviour
         CameraController.instance.StartZoomIn(1.5f, 4f);
         UIController.instance.AddBackgroundOverlay();
         UIController.instance.InventorySwitch();
+        UIController.instance.HideUI();
         if (audioControl == true)
             MusicManager.instance.PlayPauseMusic();
     }
@@ -134,6 +135,7 @@ public class MemoriesController : MonoBehaviour
     private void EndMemory(bool audioControl) {
         CameraController.instance.StartZoomOut(1.5f, 4f);
         UIController.instance.RemoveBackgroundOverlay();
+        UIController.instance.ShowUI();
         playerMovement.PlayingMemories();
         if (audioControl == true)
             MusicManager.instance.PlayPauseMusic();

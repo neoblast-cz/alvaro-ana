@@ -8,6 +8,6 @@ public class NPCJustDialogue : NPC
     public Dialogue justDialogue;
 
     protected override void InteractionWithPlayer () {
-        DialogueController.instance.StartDialogue(gameObject.name, justDialogue, transform);
+        DialogueController.instance.StartDialogue(gameObject.name, justDialogue, transform, false);
     }
 }

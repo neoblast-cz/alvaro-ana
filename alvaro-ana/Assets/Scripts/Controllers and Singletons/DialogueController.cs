@@ -27,14 +27,16 @@ public class DialogueController : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(string speaker, Dialogue dialogueFromTrigger, Transform characterTransform) {
+    public void StartDialogue(string speaker, Dialogue dialogueFromTrigger, Transform characterTransform, bool skipZooming) {
         speakingWith = characterTransform.gameObject.GetComponent<NPC>();
         // initiate
         if (!dialogueInProgress) {
             sentences.Clear();
             CreateUIWindow(characterTransform);
             UIDialogueWindowTexts[0].text = speaker;
-            CameraController.instance.StartZoomIn(2.5f, 4f);
+            if (!skipZooming)
+                CameraController.instance.StartZoomIn(2.5f, 4f);
+
             foreach (string sentence in dialogueFromTrigger.sentences)
             {
                 sentences.Enqueue(sentence);

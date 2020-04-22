@@ -15,6 +15,7 @@ public class Coin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "Player" && !used) {
             used = true;
+            AudioManager.instance.PlaySound(AudioManager.Sound.Coin);
             GameManager.instance.AddRings(1);
             Destroy(gameObject);
         }

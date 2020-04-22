@@ -55,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayingMemories() {
         playingmemories = !playingmemories;
-        Debug.Log("cannot move, playing memories=" + playingmemories);
     }
 
     public void CannotJump() {
