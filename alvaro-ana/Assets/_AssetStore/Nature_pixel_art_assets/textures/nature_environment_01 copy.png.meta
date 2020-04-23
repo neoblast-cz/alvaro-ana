@@ -59,6 +59,24 @@ TextureImporter:
   - first:
       213: -715172314554168381
     second: White4
+  - first:
+      213: 7111103709645031932
+    second: nature_environment_01 copy_11
+  - first:
+      213: 6451503084198640812
+    second: nature_environment_01 copy_12
+  - first:
+      213: 294937897424994211
+    second: nature_environment_01 copy_13
+  - first:
+      213: -5387648533329437432
+    second: nature_environment_01 copy_14
+  - first:
+      213: -7486312921068793188
+    second: nature_environment_01 copy_15
+  - first:
+      213: 2399764979739639299
+    second: nature_environment_01 copy_16
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -541,7 +559,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -549,6 +567,132 @@ TextureImporter:
       bones: []
       spriteID: 3cb0ecda1923316f0800000000000000
       internalID: -715172314554168381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9ca5ec527bfa260800000000000000
+      internalID: 7111103709645031932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac3ff0afd7588950800000000000000
+      internalID: 6451503084198640812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af31de7474d71400800000000000000
+      internalID: 294937897424994211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d9e34343a3b35b0800000000000000
+      internalID: -5387648533329437432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_15
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92174eff064b1890800000000000000
+      internalID: -7486312921068793188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nature_environment_01 copy_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ebdc9d88dad4120800000000000000
+      internalID: 2399764979739639299
       vertices: []
       indices: 
       edges: []

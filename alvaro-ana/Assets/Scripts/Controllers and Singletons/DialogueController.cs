@@ -13,7 +13,9 @@ public class DialogueController : MonoBehaviour
     private NPC speakingWith;
 
     public Queue<string> sentences;
+    public float delayBetweenLetters = 0.06f;
 
+    [HideInInspector]
     public bool dialogueInProgress;
 
     void Awake() {
@@ -60,7 +62,7 @@ public class DialogueController : MonoBehaviour
         UIDialogueWindowTexts[1].text = "";
         foreach (char letter in sentence.ToCharArray()) {
             UIDialogueWindowTexts[1].text += letter;
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(delayBetweenLetters);
             yield return null;
         }
     }

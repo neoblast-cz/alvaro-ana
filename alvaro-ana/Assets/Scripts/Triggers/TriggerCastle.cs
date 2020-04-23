@@ -33,6 +33,7 @@ public class TriggerCastle : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         CameraController.instance.StartZoomIn(3f, 4f);
+        UIController.instance.HideUI();
     }
 
 }
