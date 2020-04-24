@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
         Coin,
         Dying,
         Puff,
+        Teleport,
     }
 
     void Awake() {

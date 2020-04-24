@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5891268786145993395}
   - component: {fileID: 1125760996}
   m_Layer: 5
-  m_Name: Jessie
+  m_Name: Lydia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,9 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   memoryType: 0
-  icon: {fileID: 0}
   nameText: {fileID: 0}
-  videoclip: {fileID: 32900000, guid: 5d69806725f5f4a5896536cf000123a1, type: 3}
+  videoclip: {fileID: 32900000, guid: 00d43ee79adbc479eaf31f50bf0e3efd, type: 3}
   photo: {fileID: 0}
   audioClip: {fileID: 0}
 --- !u!1 &5891268786169564730

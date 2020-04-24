@@ -38,6 +38,7 @@ public class GameAssets : MonoBehaviour
     public GameObject hitPowPF;
     public GameObject dashPF;
     public GameObject teleportPF;
+    public GameObject coinEffectPF;
 
     [Header("Objects")]
     public GameObject mushroomPf;

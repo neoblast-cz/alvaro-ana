@@ -12,8 +12,7 @@ public class TriggerAltar : MonoBehaviour
     CanvasGroup localCanvasGroup;
     float increment = 0.00001f;
 
-    void Start()
-    {
+    void Start() {
         localCanvasGroup = GameAssets.instance.finalScreen.GetComponent<CanvasGroup>();
         localCanvasGroup.alpha = 0f;
     }
@@ -42,8 +41,8 @@ public class TriggerAltar : MonoBehaviour
 
         DialogueController.instance.StartDialogue("Ana", justDialogue, GameObject.Find("Ana_DoNotRename").transform, true);
         GameAssets.instance.finalScreen.SetActive(true);
-        yield return new WaitForSeconds(2f);
 
+        yield return new WaitForSeconds(2f);
         StartCoroutine(ChangeAlpha(0f, 1f, 10f));
     }
 

@@ -22,6 +22,7 @@ public class TriggerCastle : MonoBehaviour
         Destroy(teleportEffect, 2f);
 
         StartCoroutine(ChangeSkinAndFun());
+        AudioManager.instance.PlaySound(AudioManager.Sound.Teleport);
         GameManager.instance.MovePlayer(exit);
     }
 
@@ -29,7 +30,7 @@ public class TriggerCastle : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         player.GetComponent<PlayerMovement>().CannotJump();
-        player.GetComponentInChildren<SpriteRenderer>().sprite = GameAssets.instance.groomSkin;
+        
 
         yield return new WaitForSeconds(0.5f);
         CameraController.instance.StartZoomIn(3f, 4f);

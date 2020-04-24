@@ -22,6 +22,7 @@ public class TriggerPipeEntrance : MonoBehaviour
         teleportEffect.transform.localScale = new Vector3(fxScale, fxScale, fxScale);
         Destroy(teleportEffect, 2f);
 
+        AudioManager.instance.PlaySound(AudioManager.Sound.Teleport);
         GameManager.instance.MovePlayer(exit);
 	}
     
