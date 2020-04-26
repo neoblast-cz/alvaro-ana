@@ -79,6 +79,7 @@ public class DialogueController : MonoBehaviour
         UIDialogueWindow = Instantiate(GameAssets.instance.dialoguePf, new Vector3(transformWhere.position.x, transformWhere.position.y + 1.3f, transformWhere.position.z), transformWhere.rotation);
         UIDialogueWindow.transform.parent = gameObject.transform;
         UIDialogueWindowTexts = UIDialogueWindow.GetComponentsInChildren<TMP_Text>();
+        AudioManager.instance.PlaySound(AudioManager.Sound.Talking);
         UIController.instance.UpdateMessageSticky("Press Spacebar to continue", true);
         UIController.instance.AddBackgroundOverlay();
     }

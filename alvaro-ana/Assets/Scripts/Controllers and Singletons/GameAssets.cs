@@ -51,6 +51,7 @@ public class GameAssets : MonoBehaviour
 
     [Header("Sounds")]
     public AudioMixerGroup audioMixerGroup;
+    public AudioClip curbYourEnthusiasm;
     public SoundAudioClip[] soundAudioClipArray;
     [System.Serializable]
     public class SoundAudioClip

@@ -33,6 +33,7 @@ public class NPC : MonoBehaviour
             memoryPF.transform.parent = inventory;
             memoryPF.name = carryingMemory.name;
             UIController.instance.UpdateMessageWithFadeOut("Memory added");
+            AudioManager.instance.PlaySound(AudioManager.Sound.UI_Click);
             carryingMemory = null;
         }
     }

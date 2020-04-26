@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 1fc2ad2fb3f9046b0b5139d623c16191
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7362220643828410885
+    second: coin-sprite-png-3_0
+  - first:
+      213: -1599679179451328863
+    second: coin-sprite-png-3_1
+  - first:
+      213: -5178137125657538549
+    second: coin-sprite-png-3_2
+  - first:
+      213: 7044681661666866039
+    second: coin-sprite-png-3_3
+  - first:
+      213: 3261936288341700514
+    second: coin-sprite-png-3_4
+  - first:
+      213: 3585302025625934949
+    second: coin-sprite-png-3_5
+  - first:
+      213: 7055316194392252913
+    second: coin-sprite-png-3_6
+  - first:
+      213: -2462669229361572815
+    second: coin-sprite-png-3_7
+  - first:
+      213: -2041889622341588419
+    second: coin-sprite-png-3_8
+  - first:
+      213: 6405897221357198545
+    second: coin-sprite-png-3_9
+  - first:
+      213: -3666765439279518282
+    second: coin-sprite-png-3_10
+  - first:
+      213: 3674593920089896201
+    second: coin-sprite-png-3_11
+  - first:
+      213: 1797504925456307357
+    second: coin-sprite-png-3_12
+  - first:
+      213: 7214266263443166771
+    second: coin-sprite-png-3_13
+  - first:
+      213: 9123876578293917868
+    second: coin-sprite-png-3_14
+  - first:
+      213: -1122311069793512302
+    second: coin-sprite-png-3_15
+  - first:
+      213: 2793605380011407087
+    second: coin-sprite-png-3_16
+  - first:
+      213: -9103037772050952034
+    second: coin-sprite-png-3_17
+  - first:
+      213: 3459956790895639936
+    second: coin-sprite-png-3_18
+  - first:
+      213: -2113113947302757831
+    second: coin-sprite-png-3_19
+  - first:
+      213: -6105342961806662031
+    second: coin-sprite-png-3_20
+  - first:
+      213: -7947782560354447283
+    second: coin-sprite-png-3_21
+  - first:
+      213: -223120712863824650
+    second: coin-sprite-png-3_22
+  - first:
+      213: -8903525612602076932
+    second: coin-sprite-png-3_23
+  - first:
+      213: -191211696358647202
+    second: coin-sprite-png-3_24
+  - first:
+      213: 7868776360342683666
+    second: coin-sprite-png-3_25
+  - first:
+      213: -8025122307420970340
+    second: coin-sprite-png-3_26
+  - first:
+      213: 5850808482776405565
+    second: coin-sprite-png-3_27
+  - first:
+      213: 6707065973063854237
+    second: coin-sprite-png-3_28
+  - first:
+      213: -8040291592211859107
+    second: coin-sprite-png-3_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coin-sprite-png-3_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 196
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50aa0793bacdb2660800000000000000
+      internalID: 7362220643828410885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 196
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a61732034cccc9e0800000000000000
+      internalID: -1599679179451328863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 196
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b009bea18bf8328b0800000000000000
+      internalID: -5178137125657538549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 196
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773bc5f95acb3c160800000000000000
+      internalID: 7044681661666866039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 196
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af209295c9b44d20800000000000000
+      internalID: 3261936288341700514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 196
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c1ce1523d81c130800000000000000
+      internalID: 3585302025625934949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_6
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 196
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1afc8b2b489e160800000000000000
+      internalID: 7055316194392252913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 196
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1345e983267d2ddd0800000000000000
+      internalID: -2462669229361572815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 132
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ae5c5f430c9a3e0800000000000000
+      internalID: -2041889622341588419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 132
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc58aa359156e850800000000000000
+      internalID: 6405897221357198545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 132
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bda015a2480d1dc0800000000000000
+      internalID: -3666765439279518282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 132
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905b4c493b7cef230800000000000000
+      internalID: 3674593920089896201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 132
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9496d3c43502f810800000000000000
+      internalID: 1797504925456307357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_13
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 132
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3365d9b91f83e1460800000000000000
+      internalID: 7214266263443166771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_14
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 132
+        width: 18
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca827b758658e9e70800000000000000
+      internalID: 9123876578293917868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_15
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 132
+        width: 15
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294187d3700cc60f0800000000000000
+      internalID: -1122311069793512302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_16
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 68
+        width: 18
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6333eba41e4c620800000000000000
+      internalID: 2793605380011407087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_17
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 68
+        width: 23
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9090f350638ba180800000000000000
+      internalID: -9103037772050952034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 68
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08df883ae5c340030800000000000000
+      internalID: 3459956790895639936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_19
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 68
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a78198f06bca2e0800000000000000
+      internalID: -2113113947302757831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_20
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 68
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17625997ce6754ba0800000000000000
+      internalID: -6105342961806662031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_21
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 68
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40570adeddc3b190800000000000000
+      internalID: -7947782560354447283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_22
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 68
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f448bfc4e057ecf0800000000000000
+      internalID: -223120712863824650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_23
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 68
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0d244d0a2507480800000000000000
+      internalID: -8903525612602076932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 4
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a94a9a9fda85df0800000000000000
+      internalID: -191211696358647202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_25
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 4
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210873fb862833d60800000000000000
+      internalID: 7868776360342683666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 4
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c922c13c7c901a090800000000000000
+      internalID: -8025122307420970340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_27
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 4
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36dab0f05f323150800000000000000
+      internalID: 5850808482776405565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_28
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 4
+        width: 55
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98a49987f8441d50800000000000000
+      internalID: 6707065973063854237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-sprite-png-3_29
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 4
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59f6ab65652b6090800000000000000
+      internalID: -8040291592211859107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

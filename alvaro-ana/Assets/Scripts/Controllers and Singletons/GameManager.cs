@@ -43,6 +43,15 @@ public class GameManager : MonoBehaviour
         UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
     }
 
+    public void RemoveRings(int subtraction) {
+        score = score - subtraction;
+        UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
+    }
+
+    public int ReturnNumberOfRings() {
+        return score;
+    }
+
     IEnumerator RestartLevelCoroutine (float delay) {
         yield return new WaitForSeconds(delay);
         CameraController.instance.RestartCamera();
@@ -75,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void PauseScreenToggle() {
+        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Switch_Click1);
         if (pauseScreenActive) {
             GameAssets.instance.pauseMenu.SetActive(false);
             CameraController.instance.StartZoomOut(2.5f, 4f);
@@ -89,11 +99,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void QuitTheGame() {
+        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Switch_Click2);
         Debug.Log("quitting");
         Application.Quit();
     }
 
     public void RestartScene() {
+        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Switch_Click2);
         Debug.Log("restarting");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

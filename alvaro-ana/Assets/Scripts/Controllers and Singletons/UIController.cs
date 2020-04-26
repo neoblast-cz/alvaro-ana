@@ -56,6 +56,7 @@ public class UIController : MonoBehaviour
     }
 
     public void InventorySwitch() {
+        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Click);
         animator.SetBool("inventory", !inventory);
         inventory = !inventory;
     }

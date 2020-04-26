@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
     public static MusicManager instance { get; private set; }
 
     AudioSource musicSource;
-    List<AudioClip> list;
+    public List<AudioClip> list;
 
     void Awake() {
         if (instance != null) {
@@ -21,16 +21,15 @@ public class MusicManager : MonoBehaviour
 
     void Start() {
         musicSource = GetComponent<AudioSource>();
-
-        list = new List<AudioClip>();
-        foreach (AudioClip musicClip in GameAssets.instance.gameMusicArray) {
-            list.Add(musicClip);
-        }
-        
         StartCoroutine(PlayRandomMusic());
     }
 
     IEnumerator PlayRandomMusic() {
+        //load track
+        if (list.Count == 0) {
+            AddTracks();
+        }
+
         //choose random number
         int randomNumber = Random.Range(0, list.Count);
 
@@ -38,9 +37,20 @@ public class MusicManager : MonoBehaviour
         musicSource.clip = list[randomNumber];
         musicSource.Play();
 
-        yield return new WaitForSeconds(list[randomNumber].length);
-        //let's start again
-        StartCoroutine(PlayRandomMusic());
+        Debug.Log("new clips started, should take:" + musicSource.clip.length + "seconds");
+
+        list.Remove(list[randomNumber]);
+        yield return new WaitForSeconds(musicSource.clip.length);
+
+        //finished? let's start again
+        NextRandomTrack();
+    }
+
+    void AddTracks() {
+        list = new List<AudioClip>();
+        foreach (AudioClip musicClip in GameAssets.instance.gameMusicArray) {
+            list.Add(musicClip);
+        }
     }
 
     public void PlayPauseMusic() {
@@ -50,5 +60,15 @@ public class MusicManager : MonoBehaviour
         else {
             musicSource.Play();
         }
+    }
+
+    //public void ChangeTrack(AudioClip newClip) {
+    //    musicSource.clip = newClip;
+    //    musicSource.Play();
+    //}
+
+    public void NextRandomTrack() {
+        StopCoroutine(PlayRandomMusic());
+        StartCoroutine(PlayRandomMusic());
     }
 }

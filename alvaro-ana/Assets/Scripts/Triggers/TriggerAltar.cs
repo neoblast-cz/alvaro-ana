@@ -35,14 +35,16 @@ public class TriggerAltar : MonoBehaviour
     IEnumerator FinalAnimation(GameObject target) {
         target.GetComponent<PlayerMovement>().PlayingMemories();
         yield return new WaitForSeconds(1f);
-
         CameraController.instance.StartZoomOut(3f, 20f);
-        yield return new WaitForSeconds(1f);
 
+        yield return new WaitForSeconds(1f);
         DialogueController.instance.StartDialogue("Ana", justDialogue, GameObject.Find("Ana_DoNotRename").transform, true);
         GameAssets.instance.finalScreen.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        //MusicManager.instance.ChangeTrack(GameAssets.instance.curbYourEnthusiasm);
+
+        yield return new WaitForSeconds(1f);
         StartCoroutine(ChangeAlpha(0f, 1f, 10f));
     }
 

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    float frequency = 3f;
+    float frequency = 2f;
     float magnitude = 0.01f;
     private bool used;
+    private CircleCollider2D collider;
+
+    void Start()
+    {
+        collider = GetComponentInChildren<CircleCollider2D>();
+        collider.enabled = false;
+        StartCoroutine(ActivateCollider());
+    }
 
     void FixedUpdate() {
         transform.position = transform.position + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
@@ -24,5 +32,10 @@ public class Coin : MonoBehaviour
             GameManager.instance.AddRings(1);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ActivateCollider() {
+        yield return new WaitForSeconds(1f);
+        collider.enabled = true;
     }
 }
