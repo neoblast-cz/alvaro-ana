@@ -215,10 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2760c6f4a2194f17a22938a622bafb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryType: 2
+  memoryType: 0
   nameText: {fileID: 0}
-  videoclip: {fileID: 0}
-  photo: {fileID: 21300000, guid: 297de632163c2474abe267d448f24ec3, type: 3}
+  videoclip: {fileID: 32900000, guid: 36e3c67935fba4840a499f2b7d7f2637, type: 3}
+  photo: {fileID: 0}
   audioClip: {fileID: 0}
 --- !u!1 &5655014823728495237
 GameObject:

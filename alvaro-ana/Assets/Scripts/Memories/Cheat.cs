@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Cheat : MonoBehaviour
 {
@@ -39,5 +40,11 @@ public class Cheat : MonoBehaviour
         foreach (NPC men in listOfPeople) {
             men.GiveObject();
         }
+    }
+
+    [MenuItem("Cheats/Get 10 coins")]
+    public static void TenCoins()
+    {
+        GameManager.instance.AddCoins(10);
     }
 }

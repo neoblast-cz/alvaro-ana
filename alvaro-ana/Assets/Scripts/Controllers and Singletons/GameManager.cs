@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(RestartLevelCoroutine(delay));
     }
 
-    public void AddRings(int addition) {
+    public void AddCoins(int addition) {
         score = score + addition;
         UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
     }
 
-    public void RemoveRings(int subtraction) {
+    public void RemoveCoins(int subtraction) {
         score = score - subtraction;
         UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
     }

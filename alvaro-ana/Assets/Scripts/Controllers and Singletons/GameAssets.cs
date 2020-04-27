@@ -64,4 +64,10 @@ public class GameAssets : MonoBehaviour
     public Sprite walmortOpened;
     public Sprite groomSkin;
     public Sprite openDoor;
+
+    [Header("Shop Items")]
+    public GameObject shopZelda;
+    public GameObject shopRingSilver;
+    public GameObject shopRingGolden;
+    public GameObject shopRingDiamond;
 }

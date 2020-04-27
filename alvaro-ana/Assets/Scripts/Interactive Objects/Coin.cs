@@ -29,7 +29,7 @@ public class Coin : MonoBehaviour
             particle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             Destroy(particle, 2f);
 
-            GameManager.instance.AddRings(1);
+            GameManager.instance.AddCoins(1);
             Destroy(gameObject);
         }
     }

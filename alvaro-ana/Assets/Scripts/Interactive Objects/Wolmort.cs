@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Wolmort : MonoBehaviour
 {
+    private Transform inventory;
+
     private SpriteRenderer spriteRenderer;
-    private Sprite wolmortClosed;
+    private Sprite shopClosedSprite;
+    public Sprite shopOpenedSprite;
     public GameObject shopOptions;
     private GameObject shopOptionsInstantiated; // will be instantiated
     private Vector3 offset = new Vector3(0f, 1.3f, 0f);
@@ -23,19 +26,20 @@ public class Wolmort : MonoBehaviour
 
     void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        wolmortClosed = spriteRenderer.sprite;
+        shopClosedSprite = spriteRenderer.sprite;
+        inventory = GameObject.Find("Content_DoNotRename").transform;
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (!shopActive) {
-            spriteRenderer.sprite = GameAssets.instance.walmortOpened;
+            spriteRenderer.sprite = shopOpenedSprite;
             CreateUIWindow();
             shopActive = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D collision) {
-        spriteRenderer.sprite = wolmortClosed;
+        spriteRenderer.sprite = shopClosedSprite;
         DestroyUIWindow();
         shopActive = false;
     }
@@ -46,27 +50,61 @@ public class Wolmort : MonoBehaviour
                 if (!purchased1) {
                     if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem1) {
                         purchased1 = true;
-                        UIController.instance.UpdateMessageWithFadeOut("Why did you buy this?");
-                        AudioManager.instance.PlaySound(AudioManager.Sound.CashRegister);
+                        GameManager.instance.RemoveCoins(priceOfItem1);
+                        PurchasedObjectAddedToInventory(GameAssets.instance.shopZelda);
                     }
                     else
-                        UIController.instance.UpdateMessageWithFadeOut("You don't have enough rings.");
+                        UIController.instance.UpdateMessageWithFadeOut("Not enough coins.");
                 }
-                else
+                else {
                     AudioManager.instance.PlaySound(AudioManager.Sound.UI_Error);
                     UIController.instance.UpdateMessageWithFadeOut("You've already bought this useless item.");
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && !purchased2) {
-                purchased2 = true;
-                Debug.Log("option 2");
+            if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                if (!purchased2) {
+                    if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem2) {
+                        purchased2 = true;
+                        GameManager.instance.RemoveCoins(priceOfItem2);
+                        PurchasedObjectAddedToInventory(GameAssets.instance.shopRingSilver);
+                    }
+                    else
+                        UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
+                }
+                else {
+                    AudioManager.instance.PlaySound(AudioManager.Sound.UI_Error);
+                    UIController.instance.UpdateMessageWithFadeOut("You've already bought this");
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && !purchased3) {
-                purchased3 = true;
-                Debug.Log("option 3");
+            if (Input.GetKeyDown(KeyCode.Alpha3)) {
+                if (!purchased3) {
+                    if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem3) {
+                        purchased3 = true;
+                        GameManager.instance.RemoveCoins(priceOfItem3);
+                        PurchasedObjectAddedToInventory(GameAssets.instance.shopRingGolden);
+                    }
+                    else
+                        UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
+                }
+                else {
+                    AudioManager.instance.PlaySound(AudioManager.Sound.UI_Error);
+                    UIController.instance.UpdateMessageWithFadeOut("You've already bought this");
+                }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4) && !purchased4) {
-                purchased4 = true;
-                Debug.Log("option 4");
+            if (Input.GetKeyDown(KeyCode.Alpha4)) {
+                if (!purchased4) {
+                    if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem4) {
+                        purchased4 = true;
+                        GameManager.instance.RemoveCoins(priceOfItem4);
+                        PurchasedObjectAddedToInventory(GameAssets.instance.shopRingDiamond);
+                    }
+                    else
+                        UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
+                }
+                else {
+                    AudioManager.instance.PlaySound(AudioManager.Sound.UI_Error);
+                    UIController.instance.UpdateMessageWithFadeOut("You've already bought this");
+                }
             }
         }
     }
@@ -78,7 +116,7 @@ public class Wolmort : MonoBehaviour
         shopOptionsInstantiated = Instantiate(shopOptions, transform.position + offset, transform.rotation);
         shopOptionsInstantiated.transform.parent = gameObject.transform;
         //UIDialogueWindowTexts = wolmortShopOptions.GetComponentsInChildren<TMP_Text>();
-        UIController.instance.UpdateMessageWithFadeOut("You should get the best ring you can afford. You know... for the lady.");
+        UIController.instance.UpdateMessageWithFadeOut("You should get the best ring you can afford. You know... for the lady");
         CameraController.instance.StartZoomIn(2.5f, 4f);
         UIController.instance.AddBackgroundOverlay();
     }
@@ -88,5 +126,14 @@ public class Wolmort : MonoBehaviour
         UIController.instance.UpdateMessageSticky("", false);
         CameraController.instance.StartZoomOut(2.5f, 4f);
         UIController.instance.RemoveBackgroundOverlay();
+    }
+
+    public void PurchasedObjectAddedToInventory(GameObject shopItem) {
+        GameObject memoryPF = (GameObject)Instantiate(shopItem, inventory.position, Quaternion.identity);
+        memoryPF.transform.localScale = new Vector3(1, 1, 1);
+        memoryPF.transform.parent = inventory;
+        memoryPF.name = shopItem.name;
+        UIController.instance.UpdateMessageWithFadeOut("Added to inventory");
+        AudioManager.instance.PlaySound(AudioManager.Sound.CashRegister);
     }
 }

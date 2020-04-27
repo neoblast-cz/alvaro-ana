@@ -38,6 +38,7 @@ public class MusicManager : MonoBehaviour
         musicSource.Play();
 
         Debug.Log("new clips started, should take:" + musicSource.clip.length + "seconds");
+        Debug.Log("new clips name: " + musicSource.clip.name);
 
         list.Remove(list[randomNumber]);
         yield return new WaitForSeconds(musicSource.clip.length);
@@ -69,6 +70,7 @@ public class MusicManager : MonoBehaviour
 
     public void NextRandomTrack() {
         StopCoroutine(PlayRandomMusic());
+        Debug.Log("stop coroutine");
         StartCoroutine(PlayRandomMusic());
     }
 }
