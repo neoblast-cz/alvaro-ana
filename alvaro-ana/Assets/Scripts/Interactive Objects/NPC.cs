@@ -5,10 +5,11 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     public GameObject carryingMemory;
-    private Transform inventory;
+
+    PlayerInventory playerInventory;
 
     void Start() {
-        inventory = GameObject.Find("Content_DoNotRename").transform;
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
     void Update() {
@@ -28,12 +29,8 @@ public class NPC : MonoBehaviour
 
     public void GiveObject() {
         if (carryingMemory != null){
-            GameObject memoryPF = (GameObject)Instantiate(carryingMemory, inventory.position, Quaternion.identity);
-            memoryPF.transform.localScale = new Vector3(1, 1, 1);
-            memoryPF.transform.parent = inventory;
-            memoryPF.name = carryingMemory.name;
-            UIController.instance.UpdateMessageWithFadeOut("Memory added");
-            AudioManager.instance.PlaySound(AudioManager.Sound.UI_Click);
+            playerInventory.GetItem(carryingMemory, false);
+
             carryingMemory = null;
         }
     }

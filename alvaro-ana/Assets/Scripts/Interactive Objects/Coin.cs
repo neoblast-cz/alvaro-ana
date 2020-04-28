@@ -9,8 +9,7 @@ public class Coin : MonoBehaviour
     private bool used;
     private CircleCollider2D collider;
 
-    void Start()
-    {
+    void Start() {
         collider = GetComponentInChildren<CircleCollider2D>();
         collider.enabled = false;
         StartCoroutine(ActivateCollider());
