@@ -15,7 +15,7 @@ public class Memory : MonoBehaviour
     private Image icon;
     public TMP_Text nameText;
 
-    public VideoClip videoclip;
+    public string videoName;
     public Sprite photo;
     public AudioClip audioClip;
 
@@ -55,7 +55,7 @@ public class Memory : MonoBehaviour
         switch (memoryType)
         {
             case (MemoryType.Video):
-                MemoriesController.instance.StartPlayingVideo(videoclip);
+                MemoriesController.instance.StartPlayingVideo(videoName);
                 break;
             case (MemoryType.Audio):
                 MemoriesController.instance.StartPlayAudio(audioClip);

@@ -45,6 +45,7 @@ public class UIController : MonoBehaviour
 
     public void UpdateRingsScore(int newScore, int totalNumberOfRigngs) {
         score.text = newScore.ToString() + "/" + totalNumberOfRigngs;
+        score.color = Color.white;
     }
 
     public void AddBackgroundOverlay() {
@@ -74,6 +75,7 @@ public class UIController : MonoBehaviour
             messageSticky = Instantiate(GameAssets.instance.messagingSystemPF, messageParent.transform, messageParent.transform);
             messageSticky.transform.parent = messageParent.transform;
             messageSticky.GetComponent<TMP_Text>().text = actualMessage.ToString();
+            messageSticky.GetComponent<TMP_Text>().color = Color.white;
         }
         else {
             Destroy(messageSticky);

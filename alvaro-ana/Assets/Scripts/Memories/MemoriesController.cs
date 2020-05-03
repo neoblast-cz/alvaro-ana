@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using System.IO;
 
 public class MemoriesController : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class MemoriesController : MonoBehaviour
     PlayerMovement playerMovement;
 
     [Header("Video")]
-    private VideoPlayer videoPlayer;
     private GameObject video;
+    private VideoPlayer videoPlayer;
     public Image playButtonVideo;
-
+    // test
+    private string message = " ";
+    
     [Header("Photo")]
     private GameObject photo;
     private Image photoImage;
@@ -52,10 +55,11 @@ public class MemoriesController : MonoBehaviour
         video.SetActive(false);
     }
 
-
     // videos
-    public void StartPlayingVideo(VideoClip videoClip) {
-        videoPlayer.clip = videoClip;
+    public void StartPlayingVideo(string videoClipName) {
+        videoPlayer.url = Path.Combine(Application.streamingAssetsPath, videoClipName);
+        videoPlayer.Play();
+        
         video.SetActive(true);
         playButtonVideo.sprite = GameAssets.instance.pauseButton;
         

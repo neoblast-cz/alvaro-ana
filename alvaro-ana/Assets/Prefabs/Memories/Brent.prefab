@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 5655014824275070619}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -51.6, y: -70.1}
-  m_SizeDelta: {x: -104.1, y: -104.1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 15, y: 0}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &5655014823311917588
 CanvasRenderer:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   memoryType: 0
   nameText: {fileID: 0}
-  videoclip: {fileID: 32900000, guid: 36e3c67935fba4840a499f2b7d7f2637, type: 3}
+  videoName: Memories-02-Brent.mp4
   photo: {fileID: 0}
   audioClip: {fileID: 0}
 --- !u!1 &5655014823728495237
@@ -252,10 +252,10 @@ RectTransform:
   m_Father: {fileID: 5655014824275070619}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 65.1}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 72, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5655014823728495242
 CanvasRenderer:
@@ -312,8 +312,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 4
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

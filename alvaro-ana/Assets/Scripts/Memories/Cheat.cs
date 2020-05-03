@@ -12,7 +12,7 @@ public class Cheat : MonoBehaviour
     public List<NPC> listOfPeople;
 
     void Start() {
-        cheatCode = new string[] { "a", "l", "v", "a", "r", "o"};
+        cheatCode = new string[] { "d", "e", "n", "v", "e", "r"};
         index = 0;
         listOfPeople = new List<NPC>();
         listOfPeople.AddRange(GameObject.FindObjectsOfType<NPC>());
