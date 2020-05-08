@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator MovePlayerCoroutine (Transform finalDestination) {
-        player.GetComponent<Animator>().SetTrigger("warpIn");
         yield return new WaitForSeconds(0.5f);
         player.SetActive(false);
 
@@ -80,7 +79,6 @@ public class GameManager : MonoBehaviour
         Destroy(teleportEffect, 2f);
 
         player.SetActive(true);
-        player.GetComponent<Animator>().SetTrigger("warpOut");
     }
 
     public void PauseScreenToggle() {

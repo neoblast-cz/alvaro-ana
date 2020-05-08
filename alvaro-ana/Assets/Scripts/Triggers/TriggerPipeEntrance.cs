@@ -13,6 +13,7 @@ public class TriggerPipeEntrance : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
                 Move();
                 used = true;
+                collision.gameObject.GetComponent<Animator>().SetTrigger("warpin");
             }
         }
     }

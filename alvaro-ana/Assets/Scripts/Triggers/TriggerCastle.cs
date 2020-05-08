@@ -6,35 +6,24 @@ public class TriggerCastle : MonoBehaviour
 {
     public Transform exit;
     private float fxScale = 1f;
-    private GameObject player;
 
-    void Awake() {
-        player = GameObject.FindGameObjectWithTag("Player");
+    void OnTriggerEnter2D(Collider2D collisionWeTouched) {
+        StartCoroutine(GetToTheEnd(collisionWeTouched.gameObject));
     }
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        Move();
-    }
-
-    private void Move() {
-        GameObject teleportEffect = (GameObject)Instantiate(GameAssets.instance.teleportPF, player.transform.position, player.transform.rotation);
+    IEnumerator GetToTheEnd(GameObject collisionObject) {
+        GameObject teleportEffect = (GameObject)Instantiate(GameAssets.instance.teleportPF, collisionObject.transform.position, collisionObject.transform.rotation);
         teleportEffect.transform.localScale = new Vector3(fxScale, fxScale, fxScale);
         Destroy(teleportEffect, 2f);
 
-        StartCoroutine(ChangeSkinAndFun());
         AudioManager.instance.PlaySound(AudioManager.Sound.Teleport);
         GameManager.instance.MovePlayer(exit);
-    }
 
-    IEnumerator ChangeSkinAndFun()
-    {
         yield return new WaitForSeconds(0.5f);
-        player.GetComponent<PlayerMovement>().CannotJump();
+        collisionObject.GetComponent<PlayerMovement>().CannotJump();
         
-
         yield return new WaitForSeconds(0.5f);
-        CameraController.instance.StartZoomIn(3f, 4f);
+        //CameraController.instance.StartZoomIn(3.5f, 4f);
         UIController.instance.HideUI();
     }
-
 }

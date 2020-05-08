@@ -47,4 +47,10 @@ public class Cheat : MonoBehaviour
     {
         GameManager.instance.AddCoins(10);
     }
+
+    [MenuItem("Cheats/Move to the end")]
+    public static void MoveToTheEnd()
+    {
+        GameManager.instance.MovePlayer(GameObject.Find("CheatTeleport_DoNotRename").transform);
+    }
 }

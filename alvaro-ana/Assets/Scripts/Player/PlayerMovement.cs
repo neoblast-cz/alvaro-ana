@@ -29,10 +29,10 @@ public class PlayerMovement : MonoBehaviour
             
         else horizontalMove = 0f;
 
-        if (Input.GetButtonDown("Jump") && !cannotJump) {
+        if (Input.GetButtonDown("Jump")) {
             if (DialogueController.instance.dialogueInProgress)
                 DialogueController.instance.DisplayNextSentence();
-            else {
+            else if (!cannotJump) {
                 jump = true;
             }
         }
@@ -59,5 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void CannotJump() {
         cannotJump = true;
+    }
+
+    public void SetSpeed(float newSpeed) {
+        runSpeed = newSpeed;
     }
 }

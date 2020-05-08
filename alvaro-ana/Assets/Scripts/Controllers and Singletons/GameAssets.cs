@@ -62,7 +62,6 @@ public class GameAssets : MonoBehaviour
 
     [Header("Sprites")]
     public Sprite walmortOpened;
-    public Sprite groomSkin;
     public Sprite openDoor;
 
     [Header("Shop Items")]
