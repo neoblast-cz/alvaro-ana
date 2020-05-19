@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory instance { get; private set; }
+
     private Transform inventory;
 
-    void Awake()
-    {
+    void Awake(){
+        if (instance != null) {
+            Destroy(gameObject);
+        }
+        else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
         inventory = GameObject.Find("Content_DoNotRename").transform;
     }
 
-    public void GetItem(GameObject objectGO, bool shop)
-    {
+    public void GetItem(GameObject objectGO, bool shop){
         GameObject memoryPF = (GameObject)Instantiate(objectGO, inventory.position, Quaternion.identity);
         memoryPF.transform.localScale = new Vector3(1, 1, 1);
         memoryPF.transform.parent = inventory;
@@ -27,7 +35,6 @@ public class PlayerInventory : MonoBehaviour
         } else {
             UIController.instance.UpdateMessageWithFadeOut("Memory added");
             AudioManager.instance.PlaySound(AudioManager.Sound.UI_Click);
-        }
-        
+        }   
     }
 }

@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5655014823705466380}
   - component: {fileID: 2286522092105354075}
   m_Layer: 5
-  m_Name: Hector
+  m_Name: David
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2760c6f4a2194f17a22938a622bafb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryType: 1
+  memoryType: 0
   nameText: {fileID: 0}
-  videoName: 
+  videoName: Memories-08-David_480p.mp4
   photo: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 2ff1511ee4ca34749858e6e7ea845cfe, type: 3}
 --- !u!1 &5655014823728495237

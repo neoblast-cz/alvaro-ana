@@ -290,11 +290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2760c6f4a2194f17a22938a622bafb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryType: 0
+  memoryType: 1
   nameText: {fileID: 0}
   videoName: Memories-01-Tim.mp4
   photo: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 119bfed7e97b84b53856a426821e904b, type: 3}
 --- !u!1 &5891268786169564730
 GameObject:
   m_ObjectHideFlags: 0

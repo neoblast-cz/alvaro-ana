@@ -13,7 +13,7 @@ public class TriggerWardrobe : MonoBehaviour
     void Start(){        
         openedDoor.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
-        leftCollider.gameObject.SetActive(false);
+        leftCollider.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -24,6 +24,8 @@ public class TriggerWardrobe : MonoBehaviour
 
             collision.GetComponentInChildren<Animator>().SetTrigger("groom");
             collision.GetComponent<PlayerMovement>().SetSpeed(15f);
+            collision.GetComponent<PlayerMovement>().CannotJump();
+            UIController.instance.HideUI();
 
             CameraController.instance.StartZoomIn(2.5f, 4f);
 
@@ -31,11 +33,12 @@ public class TriggerWardrobe : MonoBehaviour
             puff.transform.localScale = new Vector3(2f, 2f, 2f);
             Destroy(puff, 2f);
             used = true;
+            leftCollider.enabled = true;
         }
     }
 
     private void Update() {
-        if (Vector3.Distance(player.transform.position, transform.position) > 10f && used)
+        if (Vector3.Distance(player.transform.position, transform.position) > 7f && used)
             Destroy(gameObject);
     }
 }

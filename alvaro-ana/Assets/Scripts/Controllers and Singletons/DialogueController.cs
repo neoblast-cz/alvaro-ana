@@ -10,7 +10,7 @@ public class DialogueController : MonoBehaviour
     private GameObject UIDialogueWindow;
     private TMP_Text[] UIDialogueWindowTexts;
 
-    private NPC speakingWith;
+    private Interactable speakingWith;
 
     public Queue<string> sentences;
     public float delayBetweenLetters = 0.06f;
@@ -30,7 +30,7 @@ public class DialogueController : MonoBehaviour
     }
 
     public void StartDialogue(string speaker, Dialogue dialogueFromTrigger, Transform characterTransform, bool skipZooming) {
-        speakingWith = characterTransform.gameObject.GetComponent<NPC>();
+        speakingWith = characterTransform.gameObject.GetComponent<Interactable>();
         // initiate
         if (!dialogueInProgress) {
             sentences.Clear();

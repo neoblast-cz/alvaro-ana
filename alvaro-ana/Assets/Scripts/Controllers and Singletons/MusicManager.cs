@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour
 
     AudioSource musicSource;
     public List<AudioClip> list;
+    private float originalVolume;
 
     void Awake() {
         if (instance != null) {
@@ -21,30 +22,26 @@ public class MusicManager : MonoBehaviour
 
     void Start() {
         musicSource = GetComponent<AudioSource>();
-        StartCoroutine(PlayRandomMusic());
+        originalVolume = musicSource.volume;
     }
 
-    IEnumerator PlayRandomMusic() {
-        //load track
+    void Update() {
+        if (!musicSource.isPlaying) {
+            list.Remove(musicSource.clip);
+            musicSource.clip = GetRandomClip();
+            musicSource.Play();
+
+            Debug.Log("new clips started, should take:" + musicSource.clip.length + "seconds");
+            Debug.Log("new clips name: " + musicSource.clip.name);
+        }
+    }
+
+    private AudioClip GetRandomClip() {
         if (list.Count == 0) {
             AddTracks();
         }
 
-        //choose random number
-        int randomNumber = Random.Range(0, list.Count);
-
-        // play music clip based on random number
-        musicSource.clip = list[randomNumber];
-        musicSource.Play();
-
-        Debug.Log("new clips started, should take:" + musicSource.clip.length + "seconds");
-        Debug.Log("new clips name: " + musicSource.clip.name);
-
-        list.Remove(list[randomNumber]);
-        yield return new WaitForSeconds(musicSource.clip.length);
-
-        //finished? let's start again
-        NextRandomTrack();
+        return list[Random.Range(0, list.Count)];
     }
 
     void AddTracks() {
@@ -54,23 +51,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void PlayPauseMusic() {
-        if (musicSource.isPlaying) {
-            musicSource.Pause();
-        }
-        else {
-            musicSource.Play();
-        }
-    }
-
-    //public void ChangeTrack(AudioClip newClip) {
-    //    musicSource.clip = newClip;
-    //    musicSource.Play();
-    //}
-
-    public void NextRandomTrack() {
-        StopCoroutine(PlayRandomMusic());
-        Debug.Log("stop coroutine");
-        StartCoroutine(PlayRandomMusic());
+    public void PlayPauseMusic(float newValue) {
+        musicSource.volume = newValue;
     }
 }

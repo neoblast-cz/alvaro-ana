@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NPCJustDialogue : NPC
+public class NPCJustDialogue : Interactable
 {
     public Dialogue justDialogue;
 

@@ -19,11 +19,6 @@ public class TriggerCastle : MonoBehaviour
         AudioManager.instance.PlaySound(AudioManager.Sound.Teleport);
         GameManager.instance.MovePlayer(exit);
 
-        yield return new WaitForSeconds(0.5f);
-        collisionObject.GetComponent<PlayerMovement>().CannotJump();
-        
-        yield return new WaitForSeconds(0.5f);
-        //CameraController.instance.StartZoomIn(3.5f, 4f);
-        UIController.instance.HideUI();
+        yield return new WaitForSeconds(0.3f);
     }
 }

@@ -132,8 +132,8 @@ public class MemoriesController : MonoBehaviour
         UIController.instance.AddBackgroundOverlay();
         UIController.instance.InventorySwitch();
         UIController.instance.HideUI();
-        if (audioControl == true)
-            MusicManager.instance.PlayPauseMusic();
+        if (audioControl)
+            MusicManager.instance.PlayPauseMusic(0.02f);
     }
 
     private void EndMemory(bool audioControl) {
@@ -141,7 +141,7 @@ public class MemoriesController : MonoBehaviour
         UIController.instance.RemoveBackgroundOverlay();
         UIController.instance.ShowUI();
         playerMovement.PlayingMemories();
-        if (audioControl == true)
-            MusicManager.instance.PlayPauseMusic();
+        if (audioControl)
+            MusicManager.instance.PlayPauseMusic(0.3f);
     }
 }

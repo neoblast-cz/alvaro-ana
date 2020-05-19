@@ -9,13 +9,13 @@ public class Cheat : MonoBehaviour
     private int index;
 
     private bool used;
-    public List<NPC> listOfPeople;
+    public List<Interactable> listOfPeople;
 
     void Start() {
         cheatCode = new string[] { "d", "e", "n", "v", "e", "r"};
         index = 0;
-        listOfPeople = new List<NPC>();
-        listOfPeople.AddRange(GameObject.FindObjectsOfType<NPC>());
+        listOfPeople = new List<Interactable>();
+        listOfPeople.AddRange(GameObject.FindObjectsOfType<Interactable>());
     }
 
     void Update() {
@@ -37,8 +37,9 @@ public class Cheat : MonoBehaviour
 
     void CheatActivated() {
         Debug.Log("cheat activated");
-        foreach (NPC men in listOfPeople) {
-            men.GiveObject();
+        foreach (Interactable carryingMemory in listOfPeople) {
+            carryingMemory.GiveObject();
+            listOfPeople.Remove(carryingMemory);
         }
     }
 

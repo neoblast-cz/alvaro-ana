@@ -22,13 +22,9 @@ public class Wolmort : MonoBehaviour
     private bool purchased3;
     private bool purchased4;
 
-    PlayerInventory playerInventory;
-
-
     void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         shopClosedSprite = spriteRenderer.sprite;
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -52,7 +48,7 @@ public class Wolmort : MonoBehaviour
                     if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem1) {
                         purchased1 = true;
                         GameManager.instance.RemoveCoins(priceOfItem1);
-                        playerInventory.GetItem(GameAssets.instance.shopZelda, true);
+                        PlayerInventory.instance.GetItem(GameAssets.instance.shopZelda, true);
                     }
                     else
                         UIController.instance.UpdateMessageWithFadeOut("Not enough coins.");
@@ -67,7 +63,7 @@ public class Wolmort : MonoBehaviour
                     if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem2) {
                         purchased2 = true;
                         GameManager.instance.RemoveCoins(priceOfItem2);
-                        playerInventory.GetItem(GameAssets.instance.shopRingSilver, true);
+                        PlayerInventory.instance.GetItem(GameAssets.instance.shopRingSilver, true);
                     }
                     else
                         UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
@@ -82,7 +78,7 @@ public class Wolmort : MonoBehaviour
                     if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem3) {
                         purchased3 = true;
                         GameManager.instance.RemoveCoins(priceOfItem3);
-                        playerInventory.GetItem(GameAssets.instance.shopRingGolden, true);
+                        PlayerInventory.instance.GetItem(GameAssets.instance.shopRingGolden, true);
                     }
                     else
                         UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
@@ -97,7 +93,7 @@ public class Wolmort : MonoBehaviour
                     if (GameManager.instance.ReturnNumberOfRings() >= priceOfItem4) {
                         purchased4 = true;
                         GameManager.instance.RemoveCoins(priceOfItem4);
-                        playerInventory.GetItem(GameAssets.instance.shopRingDiamond, true);
+                        PlayerInventory.instance.GetItem(GameAssets.instance.shopRingDiamond, true);
                     }
                     else
                         UIController.instance.UpdateMessageWithFadeOut("Not enough coins");
