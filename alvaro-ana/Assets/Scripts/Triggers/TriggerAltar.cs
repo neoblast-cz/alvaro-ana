@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerAltar : MonoBehaviour
 {
     bool used;
-
+    [SerializeField] private GameObject confetti;
     public Dialogue justDialogue;
 
     bool startIncreasingAlpha;
@@ -14,6 +14,7 @@ public class TriggerAltar : MonoBehaviour
 
     void Start() {
         localCanvasGroup = GameAssets.instance.finalScreen.GetComponent<CanvasGroup>();
+        confetti.SetActive(false);
         localCanvasGroup.alpha = 0f;
     }
 
@@ -39,6 +40,7 @@ public class TriggerAltar : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         DialogueController.instance.StartDialogue("Ana", justDialogue, GameObject.Find("Ana_DoNotRename").transform, true);
+        confetti.SetActive(true);
         GameAssets.instance.finalScreen.SetActive(true);
 
         yield return new WaitForSeconds(1f);

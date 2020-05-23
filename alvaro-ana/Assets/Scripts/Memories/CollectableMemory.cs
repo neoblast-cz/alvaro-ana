@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectableMemory : Interactable
 {
-    private float fxScale = 1f;
+    private float fxScale = 0.5f;
 
     protected override void InteractionWithPlayer() {
         GiveObject();

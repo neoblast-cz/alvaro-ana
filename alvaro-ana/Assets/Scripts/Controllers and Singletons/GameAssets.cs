@@ -39,6 +39,8 @@ public class GameAssets : MonoBehaviour
     public GameObject dashPF;
     public GameObject teleportPF;
     public GameObject coinEffectPF;
+    public GameObject confettiBurstPF;
+    public Transform confettiScreenSpacePF;
 
     [Header("Objects")]
     public GameObject mushroomPf;

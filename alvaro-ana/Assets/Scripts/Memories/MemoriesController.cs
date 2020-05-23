@@ -133,7 +133,7 @@ public class MemoriesController : MonoBehaviour
         UIController.instance.InventorySwitch();
         UIController.instance.HideUI();
         if (audioControl)
-            MusicManager.instance.PlayPauseMusic(0.02f);
+            MusicManager.instance.PlayPauseMusic(0.01f);
     }
 
     private void EndMemory(bool audioControl) {
