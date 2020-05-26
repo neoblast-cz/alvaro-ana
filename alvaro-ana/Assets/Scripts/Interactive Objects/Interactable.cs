@@ -20,6 +20,7 @@ public class Interactable : MonoBehaviour
         if (carryingMemory != null){
             PlayerInventory.instance.GetItem(carryingMemory, false);
 
+
             carryingMemory = null;
         }
     }

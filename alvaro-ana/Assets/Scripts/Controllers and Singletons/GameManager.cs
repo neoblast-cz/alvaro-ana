@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     GameObject player;
     private float fxScale = 1f;
 
-    public bool pauseScreenActive;
-
     private int totalNumberOfRings;
     public int score;
 
@@ -79,21 +77,6 @@ public class GameManager : MonoBehaviour
         Destroy(teleportEffect, 2f);
 
         player.SetActive(true);
-    }
-
-    public void PauseScreenToggle() {
-        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Switch_Click1);
-        if (pauseScreenActive) {
-            GameAssets.instance.pauseMenu.SetActive(false);
-            CameraController.instance.StartZoomOut(2.5f, 4f);
-            UIController.instance.RemoveBackgroundOverlay();
-            pauseScreenActive = !pauseScreenActive;
-        } else {
-            GameAssets.instance.pauseMenu.SetActive(true);
-            CameraController.instance.StartZoomIn(2.5f, 4f);
-            UIController.instance.AddBackgroundOverlay();
-            pauseScreenActive = !pauseScreenActive;
-        }
     }
 
     public void QuitTheGame() {

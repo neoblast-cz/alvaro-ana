@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TriggerConfetti : MonoBehaviour
 {
-    ParticleSystem confettiParticle;
-    bool keepSpawning;
+    private ParticleSystem confettiParticle;
+    private bool cheeringUsed;
+    private bool keepSpawning;
 
     private float spawnTimer;
     private const float SPAWN_TIMER_MAX = 1f;
@@ -38,6 +39,10 @@ public class TriggerConfetti : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) {
         keepSpawning = true;
+        if (!cheeringUsed) {
+            cheeringUsed = true;
+            AudioManager.instance.PlaySound(AudioManager.Sound.Wedding_Cheering);
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision) {

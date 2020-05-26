@@ -14,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     private bool playingmemories;
 
-    void Start() {
+    void Awake()
+    {
         controller = GetComponent<CharacterController2D>();
     }
+
 
     void Update() {
         if (!DialogueController.instance.dialogueInProgress && !playingmemories) {
@@ -40,16 +42,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
             dashDown = true;
         } else dashDown = false;
-
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            GameManager.instance.PauseScreenToggle();
-        }
     }
 
     void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
-
         controller.DashDown(dashDown);
     }
 

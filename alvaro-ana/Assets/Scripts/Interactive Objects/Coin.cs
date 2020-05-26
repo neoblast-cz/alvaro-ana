@@ -6,6 +6,8 @@ public class Coin : MonoBehaviour
 {
     float frequency = 2f;
     float magnitude = 0.01f;
+
+    LeanTweenType easyType;
     private bool used;
     private CircleCollider2D collider;
 
@@ -15,9 +17,14 @@ public class Coin : MonoBehaviour
         StartCoroutine(ActivateCollider());
     }
 
-    void FixedUpdate() {
-        transform.position = transform.position + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+    void OnEnable() {
+        easyType = LeanTweenType.easeInBack;
+        LeanTween.moveY(gameObject, transform.position.y + 0.4f, 2f).setLoopPingPong().setEase(easyType);
     }
+
+    //void FixedUpdate() {
+    //    transform.position = transform.position + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+    //}
 
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "Player" && !used) {

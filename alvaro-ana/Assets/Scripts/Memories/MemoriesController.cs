@@ -15,8 +15,6 @@ public class MemoriesController : MonoBehaviour
     private GameObject video;
     private VideoPlayer videoPlayer;
     public Image playButtonVideo;
-    // test
-    private string message = " ";
     
     [Header("Photo")]
     private GameObject photo;

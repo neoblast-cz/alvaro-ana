@@ -26,6 +26,7 @@ public class GameAssets : MonoBehaviour
     public GameObject introMenu;
     public GameObject pauseMenu;
     public GameObject finalScreen;
+    public GameObject memoryGiven;
     
     [Header("Icons")]
     public Sprite iconVideo;

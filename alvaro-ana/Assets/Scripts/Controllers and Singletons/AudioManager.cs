@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
         UI_Error,
         UI_Switch_Click1,
         UI_Switch_Click2,
+        Wedding_Cheering,
     }
 
     void Awake() {
