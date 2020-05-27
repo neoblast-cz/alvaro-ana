@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   memoryType: 1
   nameText: {fileID: 0}
-  videoName: Memories-01-Tim.mp4
+  videoName: 
   photo: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 119bfed7e97b84b53856a426821e904b, type: 3}
 --- !u!1 &5891268786169564730

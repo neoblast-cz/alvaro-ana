@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("enable");
 
         canvas.alpha = 0f;
-        LeanTween.value(gameObject, UpdateAlpha, 0, 1, 0.5f).setDelay(0.5f);
+        LeanTween.value(gameObject, UpdateAlpha, 0, 1, 0.5f).setDelay(0.1f);
         UIController.instance.AddBackgroundOverlay();
     }
 
@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("disable");
 
         canvas.alpha = 1f;
-        LeanTween.value(gameObject, UpdateAlpha, 1, 0, 0.5f).setDelay(0.5f);
+        LeanTween.value(gameObject, UpdateAlpha, 1, 0, 0.5f).setDelay(0.1f);
         UIController.instance.RemoveBackgroundOverlay();
     }
 
