@@ -25,7 +25,7 @@ public class TriggerWardrobe : MonoBehaviour
             collision.GetComponentInChildren<Animator>().SetTrigger("groom");
             collision.GetComponent<PlayerMovement>().SetSpeed(15f);
             collision.GetComponent<PlayerMovement>().CannotJump();
-            UIController.instance.HideUI();
+            //UIController.instance.HideUI();
 
             CameraController.instance.StartZoomIn(2.5f, 4f);
 

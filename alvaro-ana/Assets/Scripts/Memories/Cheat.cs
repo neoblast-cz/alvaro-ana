@@ -43,15 +43,15 @@ public class Cheat : MonoBehaviour
         }
     }
 
-    [MenuItem("Cheats/Get 10 coins")]
-    public static void TenCoins()
-    {
-        GameManager.instance.AddCoins(10);
-    }
+    //[MenuItem("Cheats/Get 10 coins")]
+    //public static void TenCoins()
+    //{
+    //    GameManager.instance.AddCoins(10);
+    //}
 
-    [MenuItem("Cheats/Move to the end")]
-    public static void MoveToTheEnd()
-    {
-        GameManager.instance.MovePlayer(GameObject.Find("CheatTeleport_DoNotRename").transform);
-    }
+    //[MenuItem("Cheats/Move to the end")]
+    //public static void MoveToTheEnd()
+    //{
+    //    GameManager.instance.MovePlayer(GameObject.Find("CheatTeleport_DoNotRename").transform);
+    //}
 }

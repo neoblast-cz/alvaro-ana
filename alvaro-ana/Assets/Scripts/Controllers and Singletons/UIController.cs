@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    TMP_Text score;
-    
+    [SerializeField] TMP_Text score;
+    [SerializeField] TMP_Text memories;
+
+    [SerializeField] RectTransform inventoryTransform;
+    [SerializeField] CanvasGroup inventoryCanvasGroup;
+
+    [SerializeField] GameObject addToInventoryAnimItem;
+    [SerializeField] RectTransform addToInventoryTo;
+    [SerializeField] RectTransform addToCoins;
+
     SpriteRenderer blackBackground;
     Animator blackBackgroundAnimator;
 
@@ -16,8 +25,7 @@ public class UIController : MonoBehaviour
     GameObject messageSticky;
     GameObject uI;
 
-    private Animator animator;
-    bool inventory;
+    bool inventoryIsOpened;
 
     void Awake() {
         if (instance != null) {
@@ -31,10 +39,13 @@ public class UIController : MonoBehaviour
         //activate intro screen
         GameAssets.instance.introMenu.SetActive(true);
 
-        score = GameObject.Find("UI_Score").GetComponent<TMP_Text>();
         messageParent = GameObject.Find("UI_Message_DoNotRename");
         uI = GameObject.Find("UI_DoNotRename");
-        animator = uI.GetComponent<Animator>();
+        LeanTween.moveY(inventoryTransform, 200f, .5f);
+        inventoryIsOpened = false;
+        addToInventoryAnimItem.GetComponent<TrailRenderer>().enabled = false;
+        LeanTween.alphaCanvas(inventoryCanvasGroup, 0f, 0.5f);
+
         GameObject blackBackgroundGO = GameObject.Find("BlackBackground_DoNotRename");
 
         blackBackground = blackBackgroundGO.GetComponent<SpriteRenderer>();
@@ -43,9 +54,40 @@ public class UIController : MonoBehaviour
         RemoveBackgroundOverlay();
     }
 
+    public void AddToInventoryAnimation(GameObject GOfrom, bool isCoin) {
+        addToInventoryAnimItem.gameObject.transform.position = GOfrom.transform.position;
+        RectTransform destinationTransform;
+
+        if (!isCoin) {
+            addToInventoryAnimItem.GetComponent<Image>().sprite = GameAssets.instance.flyingMemory;
+            destinationTransform = addToInventoryTo;
+        }
+        else {
+            addToInventoryAnimItem.GetComponent<Image>().sprite = GameAssets.instance.flyingCoin;
+            destinationTransform = addToCoins;
+        }
+
+        addToInventoryAnimItem.GetComponent<TrailRenderer>().enabled = true;
+
+        LeanTween.alpha(addToInventoryAnimItem, 1f, 0.2f);
+
+        LeanTween.scale(addToInventoryAnimItem, new Vector3(1.1f, 1.1f, 1.1f), .5f);
+
+        LeanTween.move(addToInventoryAnimItem, destinationTransform, 0.5f).setDelay(0.5f);
+
+        LeanTween.scale(addToInventoryAnimItem, new Vector3(0.01f, 0.01f, 0.01f), .1f).setDelay(1f);
+        LeanTween.alpha(addToInventoryAnimItem, 1f, 0.2f).setDelay(1.1f).setOnComplete(() => { addToInventoryAnimItem.GetComponent<TrailRenderer>().enabled = false; } );
+        
+    }
+
     public void UpdateRingsScore(int newScore, int totalNumberOfRigngs) {
         score.text = newScore.ToString() + "/" + totalNumberOfRigngs;
         score.color = Color.white;
+    }
+
+    public void UpdateMemoriesCount(int newAmount, int totalAmountOfMemories) {
+        memories.text = newAmount.ToString() + "/" + totalAmountOfMemories + " | press [i] to open";
+        memories.color = Color.white;
     }
 
     public void AddBackgroundOverlay() {
@@ -57,9 +99,17 @@ public class UIController : MonoBehaviour
     }
 
     public void InventorySwitch() {
-        AudioManager.instance.PlaySound(AudioManager.Sound.UI_Click);
-        animator.SetBool("inventory", !inventory);
-        inventory = !inventory;
+        if (!inventoryIsOpened) {
+            // open inventory
+            inventoryIsOpened = !inventoryIsOpened;
+            LeanTween.moveY(inventoryTransform, 0f, .5f);
+            //LeanTween.alphaCanvas(inventoryCanvasGroup, 0f, 0.5f);
+        } else {
+            // close inventory
+            inventoryIsOpened = !inventoryIsOpened;
+            LeanTween.moveY(inventoryTransform, 200f, .2f);
+            //LeanTween.alphaCanvas(inventoryCanvasGroup, 1f, 0.2f); ;
+        }
     }
 
     public void UpdateMessageWithFadeOut(string actualMessage) {

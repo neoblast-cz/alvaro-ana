@@ -80,12 +80,14 @@ public class DialogueController : MonoBehaviour
         UIDialogueWindow.transform.parent = gameObject.transform;
         UIDialogueWindowTexts = UIDialogueWindow.GetComponentsInChildren<TMP_Text>();
         AudioManager.instance.PlaySound(AudioManager.Sound.Talking);
+        UIController.instance.HideUI();
         UIController.instance.UpdateMessageSticky("Press Spacebar to continue", true);
         UIController.instance.AddBackgroundOverlay();
     }
 
     private void DestroyUIWindow() {
         Destroy(UIDialogueWindow);
+        UIController.instance.ShowUI();
         UIController.instance.UpdateMessageSticky("", false);
         UIController.instance.RemoveBackgroundOverlay();
     }

@@ -35,6 +35,8 @@ public class Coin : MonoBehaviour
             particle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             Destroy(particle, 2f);
 
+            //UIController.instance.AddToInventoryAnimation(gameObject, true);
+
             GameManager.instance.AddCoins(1);
             Destroy(gameObject);
         }

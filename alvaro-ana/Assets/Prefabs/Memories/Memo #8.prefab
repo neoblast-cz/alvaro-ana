@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5891268786145993395}
   - component: {fileID: 1125760996}
   m_Layer: 5
-  m_Name: Photo #8
+  m_Name: Memo #8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   memoryType: 2
   nameText: {fileID: 0}
   videoName: 
-  photo: {fileID: 21300000, guid: a5821cfddadcf47bebe6ad0753c4eadb, type: 3}
+  photo: {fileID: 21300000, guid: f739bba740679455bbd090891c46f124, type: 3}
   audioClip: {fileID: 0}
 --- !u!1 &5891268786169564730
 GameObject:

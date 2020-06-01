@@ -27,7 +27,9 @@ public class GameAssets : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject finalScreen;
     public GameObject memoryGiven;
-    
+    public Sprite flyingMemory;
+    public Sprite flyingCoin;
+
     [Header("Icons")]
     public Sprite iconVideo;
     public Sprite iconPhoto;

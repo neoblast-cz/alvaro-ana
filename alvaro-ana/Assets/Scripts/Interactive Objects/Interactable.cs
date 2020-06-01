@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
 
     public void GiveObject() {
         if (carryingMemory != null){
-            PlayerInventory.instance.GetItem(carryingMemory, false);
+            PlayerInventory.instance.GetItem(gameObject, carryingMemory, false);
 
 
             carryingMemory = null;

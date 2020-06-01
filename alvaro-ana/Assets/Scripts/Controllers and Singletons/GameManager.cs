@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     private int totalNumberOfRings;
     public int score;
 
+    private int amountOfMemories = 0;
+    private int totalAmountOfMemories = 22;
+
     void Start() {
         if (instance != null) {
             Destroy(gameObject);
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
         totalNumberOfRings = rings.Length;
         score = 0;
         UIController.instance.UpdateRingsScore(score, totalNumberOfRings);
+        UIController.instance.UpdateMemoriesCount(amountOfMemories, totalAmountOfMemories);
     }
 
     public void RestartLevel(float delay) {
@@ -48,6 +52,11 @@ public class GameManager : MonoBehaviour
 
     public int ReturnNumberOfRings() {
         return score;
+    }
+
+    public void AddMemoriesCount() {
+        amountOfMemories++;
+        UIController.instance.UpdateMemoriesCount(amountOfMemories, totalAmountOfMemories);
     }
 
     IEnumerator RestartLevelCoroutine (float delay) {
